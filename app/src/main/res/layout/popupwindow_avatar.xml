@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33564e4e"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="1012px"
+        android:layout_height="505px"
+        android:background="@drawable/personal_album"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="130px">
+
+            <TextView
+                android:layout_marginTop="40px"
+                android:layout_marginLeft="45px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/avatar"
+                android:textSize="50px"/>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#EBEBEB" />
+
+        <LinearLayout
+            android:id="@+id/popupwindow_avatar_album"
+            android:layout_width="match_parent"
+            android:layout_height="182px"
+            android:layout_marginLeft="44px"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/xiangce22" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:text="@string/album"
+                android:textSize="50px"  />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4px"
+            android:background="#F0F0F0" />
+
+
+        <LinearLayout
+            android:id="@+id/popupwindow_avatar_shoot"
+            android:layout_width="match_parent"
+            android:layout_height="182px"
+            android:layout_marginLeft="44px"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/paizhao22" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:text="@string/shoot"
+                android:textSize="50px"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

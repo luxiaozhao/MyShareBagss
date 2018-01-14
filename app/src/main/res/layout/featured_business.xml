@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="644px">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingRight="18px">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="18px">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingRight="18px">
+
+
+                <ImageView
+                    android:id="@+id/mBuss_img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mo1" />
+
+                <TextView
+                    android:id="@+id/home_leisurename1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/bussnies_name"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:text="Ferragamo"
+                    android:textColor="#FFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/bussnies_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/home_leisurename1"
+                    android:layout_marginBottom="10px"
+                    android:text="¥20/3天"
+                    android:textColor="#FFF"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:id="@+id/bussnies_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/bussnies_name"
+                    android:layout_marginStart="20px"
+                    android:layout_toEndOf="@+id/bussnies_name"
+                    android:text="原价2000"
+                    android:textColor="#FFF"
+                    android:textSize="10sp"
+                    android:layout_below="@+id/home_leisurename1" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="18px">
+
+                <ImageView
+                    android:id="@+id/mBuss_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mo1" />
+
+                <TextView
+                    android:id="@+id/home_leisurename2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/bussnies_name3"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:text="Ferragamo"
+                    android:textColor="#FFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/bussnies_name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/home_leisurename2"
+                    android:layout_marginBottom="10px"
+                    android:text="¥20/3天"
+                    android:textColor="#FFF"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:id="@+id/bussnies_name4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bussnies_name3"
+                    android:layout_alignBottom="@+id/bussnies_name3"
+                    android:layout_marginStart="20px"
+                    android:layout_toEndOf="@+id/bussnies_name3"
+                    android:text="原价2000"
+                    android:textColor="#FFF"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="18px">
+
+            <ImageView
+                android:id="@+id/mBuss_img3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/mo2" />
+
+            <TextView
+                android:id="@+id/home_leisurename3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bussnies_name5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:text="Ferragamo"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/bussnies_name5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/home_leisurename3"
+                android:layout_marginBottom="10px"
+                android:text="¥20/3天"
+                android:textColor="#FFF"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/bussnies_name6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/bussnies_name5"
+                android:layout_alignBottom="@+id/bussnies_name5"
+                android:layout_marginStart="20px"
+                android:layout_toEndOf="@+id/bussnies_name5"
+                android:text="原价2000"
+                android:textColor="#FFF"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:paddingLeft="18px">
+
+        <ImageView
+            android:id="@+id/mBuss_img4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mo1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/xiu_name4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ferragamo"
+            android:textColor="#FFF"
+            android:textSize="14sp"
+            android:layout_marginStart="7dp"
+            android:layout_above="@+id/bussnies_name8"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/bussnies_name7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="¥20/3天"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/xiu_name4" />
+
+
+        <TextView
+            android:id="@+id/bussnies_name8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="原价2000"
+            android:textColor="#FFF"
+            android:textSize="10sp"
+            android:layout_alignBaseline="@+id/bussnies_name7"
+            android:layout_alignBottom="@+id/bussnies_name7"
+            android:layout_toEndOf="@+id/bussnies_name7" />
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+

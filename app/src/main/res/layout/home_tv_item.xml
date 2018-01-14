@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="510px"
+        android:layout_height="310px"
+        android:id="@+id/history_adapters_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/h_tv_te_item"
+        android:textSize="45px"
+        android:layout_marginTop="20px"
+        android:minLines="2"
+        android:layout_below="@id/history_adapters_name"
+        />
+
+    <RelativeLayout
+        android:layout_width="180px"
+        android:layout_height="70px"
+        android:layout_alignBottom="@id/history_adapters_name"
+        android:layout_alignLeft="@id/history_adapters_name"
+        >
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_centerVertical="true"
+            android:id="@+id/dian_tv"
+            android:layout_marginLeft="15px"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/dian_tv"
+            android:textSize="38px"
+            android:id="@+id/h_tv_time_item"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_adapters_name"
+        android:textSize="30px"
+        android:layout_marginTop="130px"
+        android:id="@+id/h_tv_date"
+        />
+</RelativeLayout>

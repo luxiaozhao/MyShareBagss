@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/xiaoyu3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50px" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/submit_text"
+            android:textSize="50px" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:background="#E3E3E3" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative1"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/brand" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/uplad_brand"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignTop="@+id/textView7"-->
+                <!--android:layout_marginEnd="36dp"-->
+                <!--android:text="LV"/>-->
+
+            <EditText
+                android:id="@+id/uplad_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textView7"
+                android:layout_marginEnd="516px"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"></View>
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative2"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/originalprice" />
+
+            <TextView
+                android:id="@+id/uplad_originalprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/text2"
+                android:layout_marginEnd="36dp"
+                android:text="M47542" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"></View>
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative3"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/size" />
+
+            <TextView
+                android:id="@+id/uplad_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/text3"
+                android:layout_marginEnd="36dp"
+               android:text="L"/>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"></View>
+
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative4"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/material" />
+
+            <TextView
+                android:id="@+id/uplad_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/text4"
+                android:layout_marginEnd="36dp"
+                 android:text="小牛皮"/>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative5"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/rentaltime" />
+
+
+            <TextView
+                android:padding="30px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_border"
+                android:text="@string/day"
+                android:textColor="#FF000000"
+                android:gravity="center"
+                android:layout_alignBaseline="@+id/text5"
+                android:layout_alignBottom="@+id/text5"
+                android:layout_toEndOf="@+id/text5"
+                android:layout_marginStart="42dp"
+                android:id="@+id/textView2" />
+
+
+            <TextView
+                android:padding="30px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_border"
+                android:text="@string/month"
+                android:textColor="#FF000000"
+                android:gravity="center"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_toEndOf="@+id/textView2"
+                android:layout_marginStart="22dp"
+                android:id="@+id/textView9" />
+
+
+
+
+            <TextView
+                android:padding="30px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_border"
+                android:text="@string/long1"
+                android:textColor="#FF000000"
+                android:gravity="center"
+                android:layout_alignBaseline="@+id/textView9"
+                android:layout_alignBottom="@+id/textView9"
+                android:layout_toEndOf="@+id/textView9"
+                android:layout_marginStart="20dp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+        <RelativeLayout
+            android:id="@+id/uplad_brand_relative6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/sell" />
+
+
+            <RadioGroup
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroup"
+                android:layout_width="400px"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="45dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/text6">
+
+                <RadioButton
+                    android:textColor="#838383"
+                    android:id="@+id/java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes1" />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <RadioButton
+                    android:textColor="#838383"
+                    android:id="@+id/dotNet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no1" />
+
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/sellprice" />
+
+
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+
+
+
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/text1" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+           >
+
+
+            <LinearLayout
+                android:layout_margin="40px"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F2F2F2"
+                android:orientation="vertical">
+
+
+                 <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@mipmap/paizhao2"/>
+
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photos"/>
+
+
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="40px"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F2F2F2"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/paizhao2"/>
+
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photos"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="40px"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F2F2F2"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/paizhao2"/>
+
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photos"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agree1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agree2"
+                android:textColor="#FC665F"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/upload_submit"
+                android:layout_marginLeft="130px"
+                android:layout_marginRight="130px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/submit_but"
+                android:textColor="#FFF"
+                android:background="#FC655E"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+</LinearLayout>

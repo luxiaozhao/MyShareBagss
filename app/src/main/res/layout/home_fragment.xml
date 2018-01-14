@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x1080"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/home_searchView"
+            android:layout_width="@dimen/x1080"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="#F7F7F7"
+            android:drawableLeft="@drawable/fangdaxiao"
+            android:drawablePadding="5dp"
+            android:hint="请输入关键字"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="@dimen/x1080"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/home_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+
+                <!--</LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.zhouwei.mzbanner.MZBannerView
+                        android:id="@+id/first_vp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y370"
+                        app:canLoop="true"
+                        app:indicatorAlign="center"
+                        app:indicatorPaddingLeft="10px"
+                        app:open_mz_mode="false" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y170"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="250px"
+                    android:paddingRight="250px">
+
+                    <!--画左边的那条线-->
+                    <View
+                        android:layout_width="@dimen/x100"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="品牌专区"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+                    <!--画右边的那条线-->
+                    <View
+                        android:layout_width="@dimen/x100"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                </LinearLayout>
+                <!--品牌专区-->
+                <include layout="@layout/brand" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="24px"
+                    android:background="#F1F1F1" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/x1080"
+                    android:layout_height="@dimen/y180"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="250px"
+                    android:paddingRight="250px">
+
+                    <!--画左边的那条线-->
+                    <View
+                        android:layout_width="100px"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="每日精选"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+                    <!--画右边的那条线-->
+                    <View
+                        android:layout_width="@dimen/x100"
+                        android:layout_height="@dimen/y1"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                </LinearLayout>
+
+                <!--每日精选-->
+                <include
+
+                    layout="@layout/eatured" />
+
+                <!--包包达人-->
+
+                <LinearLayout
+                    android:layout_width="@dimen/x1080"
+                    android:layout_height="@dimen/y150"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="250px"
+                    android:paddingRight="250px">
+
+                    <!--画左边的那条线-->
+                    <View
+                        android:layout_width="@dimen/x100"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="包包达人"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+                    <!--画右边的那条线-->
+                    <View
+                        android:layout_width="100px"
+                        android:layout_height="@dimen/y1"
+                        android:layout_weight="1"
+                        android:background="@android:color/darker_gray" />
+
+                </LinearLayout>
+                <!--包包达人详情-->
+                <include
+
+                    layout="@layout/talent" />
+
+                <!--邀请好友-->
+                <ImageView
+                    android:id="@+id/home_share"
+                    android:layout_width="@dimen/x1080"
+                    android:layout_height="@dimen/y426"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mo2" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   android:background="#36000000" >
+    <!--android:background="#36000000"-->
+    <!--android:gravity="bottom"-->
+    <RelativeLayout
+        android:background="#FFF"
+        android:layout_width="624px"
+        android:layout_height="561px"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <!--android:textColor="@drawable/derew"-->
+        <Button
+            android:id="@+id/DiGao"
+            android:layout_width="432px"
+            android:layout_height="102px"
+            android:background="@drawable/textview1"
+            android:gravity="center"
+            android:text="价格从低到高"
+          android:textColor="#FFF"
+            android:textSize="45px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28px" />
+
+        <Button
+            android:id="@+id/GaoDi"
+            android:layout_width="432px"
+            android:layout_height="102px"
+            android:background="@drawable/textview2"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="价格从高到低"
+            android:textColor="#A6A6A6"
+            android:textSize="50px"
+            android:layout_below="@+id/DiGao"
+            android:layout_alignStart="@+id/DiGao"
+            android:layout_marginTop="28px"/>
+        <!--android:textColor="@drawable/derew"-->
+        <Button
+            android:id="@+id/ZuDiGao"
+            android:background="@drawable/textview2"
+            android:layout_width="432px"
+            android:layout_height="102px"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="租金从低到高"
+            android:textColor="#A6A6A6"
+            android:textSize="50px"
+            android:layout_marginTop="28px"
+            android:layout_below="@+id/GaoDi"
+            android:layout_centerHorizontal="true" />
+        <!--android:textColor="@drawable/derew"-->
+        <Button
+            android:id="@+id/ZuGaoDi"
+            android:layout_width="432px"
+            android:layout_height="102px"
+            android:background="@drawable/textview2"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="租金从高到低"
+            android:textColor="#A6A6A6"
+            android:textSize="50px"
+            android:layout_below="@+id/ZuDiGao"
+            android:layout_alignStart="@+id/ZuDiGao"
+            android:layout_marginTop="28px"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

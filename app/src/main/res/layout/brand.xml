@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="264px">
+
+        <RelativeLayout
+            android:id="@+id/brand_img1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/home_brandimg1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="34px"
+                android:paddingBottom="34px"
+                android:paddingLeft="34px"
+                android:paddingRight="17px"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round"/>
+
+
+            <TextView
+                android:id="@+id/home_brandname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ferragamo"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/brand_img2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/home_brandimg2"
+                android:paddingTop="34px"
+                android:paddingBottom="34px"
+                android:paddingLeft="17px"
+                android:paddingRight="17px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round"/>
+
+            <TextView
+                android:id="@+id/home_brandname2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Louis Vuitton"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/brand_img3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/home_brandimg3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="34px"
+                android:paddingBottom="34px"
+                android:paddingLeft="17px"
+                android:paddingRight="34px"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round"/>
+
+
+            <TextView
+                android:id="@+id/home_brandname3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gucci"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

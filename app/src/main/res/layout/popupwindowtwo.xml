@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="#E0E0E0"
+    >
+    <!--android:background="@drawable/white"-->
+    <RelativeLayout
+       android:background="#FFF"
+        android:layout_width="600px"
+        android:layout_height="1500px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="100px"
+            android:layout_height="60px"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="类型"
+            android:textColor="#FF303030"
+            android:textSize="50px" />
+        <Button
+            android:id="@+id/DanJianOne"
+            android:layout_width="110px"
+            android:layout_height="80px"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:text="单肩"
+            android:textColor="@drawable/derew"
+            android:textSize="40px" />
+<Button
+    android:gravity="center"
+    android:background="@drawable/textview"
+    android:layout_width="110px"
+    android:layout_height="80px"
+    android:text="单肩"
+    android:textColor="@drawable/derew"
+    android:layout_marginLeft="9dp"
+    android:layout_marginStart="9dp"
+    android:id="@+id/DanJianTwo"
+    android:layout_alignBottom="@+id/DanJianOne"
+    android:layout_toRightOf="@+id/DanJianOne"
+    android:layout_toEndOf="@+id/DanJianOne"
+    android:layout_alignTop="@+id/DanJianOne" />
+
+        <Button
+            android:gravity="center"
+            android:background="@drawable/textview"
+            android:layout_width="110px"
+            android:layout_height="80px"
+            android:text="单肩"
+            android:textColor="@drawable/derew"
+            android:layout_alignBottom="@+id/DanJianTwo"
+            android:layout_toRightOf="@+id/DanJianTwo"
+            android:layout_toEndOf="@+id/DanJianTwo"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
+            android:layout_alignTop="@+id/DanJianTwo"
+            android:id="@+id/DanJianTherr" />
+        <Button
+            android:gravity="center"
+            android:background="@drawable/textview"
+            android:layout_width="110px"
+            android:layout_height="80px"
+            android:text="单肩"
+            android:textColor="@drawable/derew"
+            android:layout_alignBottom="@+id/DanJianTherr"
+            android:layout_toRightOf="@+id/DanJianTherr"
+            android:layout_toEndOf="@+id/DanJianTherr"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
+            android:layout_alignTop="@+id/DanJianTherr"
+            android:id="@+id/DanJianFour" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="500px"
+            android:layout_height="5px"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/DanJianOne"
+            android:layout_marginTop="11dp"
+            android:background="#D9D9D9" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="100px"
+            android:layout_height="60px"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView11"
+            android:layout_marginTop="12dp"
+            android:text="尺寸"
+            android:textColor="#FF303030"
+            android:textSize="50px" />
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="100px"
+            android:layout_height="80px"
+            android:text="大L"
+            android:textColor="@drawable/derew"
+            android:textSize="40px"
+            android:layout_below="@+id/textView13"
+            android:layout_toLeftOf="@+id/DanJianTwo"
+            android:layout_toStartOf="@+id/DanJianTwo"
+            android:layout_marginTop="12dp"
+            android:id="@+id/DaL" />
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="100px"
+            android:layout_height="80px"
+            android:text="中M"
+            android:textColor="@drawable/derew"
+            android:textSize="40px"
+            android:id="@+id/ZhongM"
+            android:layout_above="@+id/textView24"
+            android:layout_alignLeft="@+id/DanJianTwo"
+            android:layout_alignStart="@+id/DanJianTwo" />
+
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="100px"
+            android:layout_height="80px"
+            android:text="小S"
+            android:textColor="@drawable/derew"
+            android:textSize="40px"
+            android:layout_alignBottom="@+id/ZhongM"
+            android:layout_toLeftOf="@+id/DanJianFour"
+            android:layout_toStartOf="@+id/DanJianFour"
+            android:layout_alignTop="@+id/ZhongM"
+            android:id="@+id/XiaoS" />
+
+
+        <TextView
+            android:layout_width="500px"
+            android:layout_height="5px"
+            android:layout_marginTop="8dp"
+            android:background="#D9D9D9"
+            android:layout_below="@+id/DaL"
+            android:layout_alignLeft="@+id/DaL"
+            android:layout_alignStart="@+id/DaL"
+            android:id="@+id/textView24" />
+        <TextView
+            android:textSize="50px"
+            android:layout_width="300px"
+            android:layout_height="80px"
+            android:text="热门品牌"
+            android:layout_below="@+id/textView24"
+            android:layout_alignLeft="@+id/textView24"
+            android:layout_alignStart="@+id/textView24"
+            android:layout_marginTop="15dp"
+            android:textColor="#FF303030"
+            android:id="@+id/textView25" />
+
+        <TextView
+            android:textSize="50px"
+            android:layout_width="100px"
+            android:layout_height="80px"
+            android:text="全部"
+            android:textColor="#FF303030"
+            android:layout_alignBaseline="@+id/textView25"
+            android:layout_alignBottom="@+id/textView25"
+            android:layout_toRightOf="@+id/textView25"
+            android:layout_toEndOf="@+id/textView25"
+            android:id="@+id/textView26" />
+        <ImageView
+            android:layout_width="50px"
+            android:layout_height="80px"
+            android:src="@drawable/xioatu"
+            android:id="@+id/imageView7"
+            android:layout_alignTop="@+id/textView26"
+            android:layout_alignRight="@+id/YanHui"
+            android:layout_alignEnd="@+id/YanHui"
+            android:layout_toRightOf="@+id/Hermes"
+            android:layout_toEndOf="@+id/Hermes" />
+
+<Button
+    android:background="@drawable/textview"
+    android:gravity="center"
+    android:layout_width="200px"
+    android:layout_height="80px"
+    android:text="coach"
+    android:textSize="40px"
+    android:textColor="@drawable/derew"
+    android:layout_marginTop="8dp"
+    android:id="@+id/Coach"
+    android:layout_below="@+id/textView25"
+    android:layout_alignLeft="@+id/textView25"
+    android:layout_alignStart="@+id/textView25" />
+
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="200px"
+            android:layout_height="80px"
+            android:text="Hermes"
+            android:textSize="40px"
+            android:textColor="@drawable/derew"
+            android:layout_toRightOf="@+id/ZhongM"
+            android:layout_toEndOf="@+id/ZhongM"
+            android:layout_alignBottom="@+id/Coach"
+            android:id="@+id/Hermes" />
+
+
+        <TextView
+            android:layout_width="500px"
+            android:layout_height="5px"
+            android:background="#D9D9D9"
+            android:layout_below="@+id/Coach"
+            android:layout_alignLeft="@+id/Coach"
+            android:layout_alignStart="@+id/Coach"
+            android:layout_marginTop="9dp"
+            android:id="@+id/textView28" />
+        <TextView
+
+            android:layout_width="300px"
+            android:layout_height="80px"
+            android:text="关键字"
+            android:textSize="50px"
+            android:layout_below="@+id/textView28"
+            android:layout_alignLeft="@+id/textView28"
+            android:layout_alignStart="@+id/textView28"
+            android:layout_marginTop="12dp"
+            android:textColor="#FF303030"
+            android:id="@+id/textView29" />
+
+        <TextView
+            android:textSize="50px"
+            android:layout_width="200px"
+            android:layout_height="80px"
+            android:text="全部"
+            android:textColor="#FF303030"
+
+            android:layout_alignTop="@+id/textView29"
+            android:layout_alignBottom="@+id/textView29"
+            android:layout_alignRight="@+id/Hermes"
+            android:layout_alignEnd="@+id/Hermes"
+            android:layout_toRightOf="@+id/textView29"
+            android:layout_toEndOf="@+id/textView29"
+            android:id="@+id/textView32" />
+
+
+        <ImageView
+            android:id="@+id/imgview8"
+            android:layout_width="50px"
+            android:layout_height="80px"
+            android:src="@drawable/xioatu"
+            android:layout_alignRight="@+id/imageView7"
+            android:layout_alignEnd="@+id/imageView7"
+            android:layout_toEndOf="@+id/textView32"
+            android:layout_alignTop="@+id/textView32"
+            android:layout_toRightOf="@+id/textView32" />
+
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="200px"
+            android:layout_height="80px"
+            android:text="休闲度假"
+            android:textSize="40px"
+            android:textColor="@drawable/derew"
+            android:layout_below="@+id/textView29"
+            android:layout_alignLeft="@+id/textView29"
+            android:layout_alignStart="@+id/textView29"
+            android:layout_marginTop="12dp"
+            android:id="@+id/XuiXian" />
+
+        <Button
+            android:background="@drawable/textview"
+            android:gravity="center"
+            android:layout_width="200px"
+            android:layout_height="80px"
+            android:text="宴会轻奢"
+            android:textSize="40px"
+            android:textColor="@drawable/derew"
+            android:layout_alignLeft="@+id/DanJianTherr"
+            android:layout_alignStart="@+id/DanJianTherr"
+            android:layout_alignBottom="@+id/XuiXian"
+            android:id="@+id/YanHui" />
+
+
+
+            <Button
+                android:id="@+id/Chongzhi"
+                android:layout_width="240px"
+                android:layout_height="80px"
+                android:background="@drawable/textviewone"
+                android:gravity="center"
+                android:text="重置"
+                android:textColor="#838383"
+                android:textSize="40px"
+                android:layout_alignBottom="@+id/QueDing"
+                android:layout_alignLeft="@+id/XuiXian"
+                android:layout_alignStart="@+id/XuiXian"
+                android:layout_alignTop="@+id/QueDing" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="200px"
+            android:layout_height="80px"
+            android:text="价格"
+            android:textSize="50px"
+            android:textColor="#FF303030"
+            android:layout_below="@+id/XuiXian"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp"
+            android:id="@+id/textView10" />
+
+
+
+
+
+
+<Button
+    android:id="@+id/Wubai"
+    android:gravity="center"
+    android:layout_width="230px"
+    android:layout_height="80px"
+    android:background="@drawable/textview"
+android:text="500以下"
+    android:textColor="@drawable/derew"
+    android:layout_below="@+id/textView10"
+    android:layout_toLeftOf="@+id/Hermes"
+    android:layout_toStartOf="@+id/Hermes"
+    android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/Yiqian"
+            android:gravity="center"
+            android:layout_width="230px"
+            android:layout_height="80px"
+            android:background="@drawable/textview"
+            android:text="500-1000"
+            android:textColor="@drawable/derew"
+            android:layout_alignLeft="@+id/YanHui"
+            android:layout_alignStart="@+id/YanHui"
+            android:layout_alignBottom="@+id/Wubai" />
+
+        <Button
+            android:id="@+id/Reqian"
+            android:gravity="center"
+            android:layout_width="230px"
+            android:layout_height="80px"
+            android:background="@drawable/textview"
+            android:text="1000-2000"
+            android:textColor="@drawable/derew"
+            android:layout_above="@+id/Chongzhi"
+            android:layout_alignLeft="@+id/Wubai"
+            android:layout_alignStart="@+id/Wubai"
+            android:layout_marginBottom="9dp" />
+
+        <Button
+
+            android:id="@+id/Reqianyishang"
+            android:gravity="center"
+            android:layout_width="230px"
+            android:layout_height="80px"
+            android:background="@drawable/textview"
+            android:text="2000以上"
+            android:textColor="@drawable/derew"
+            android:layout_alignBottom="@+id/Reqian"
+            android:layout_alignRight="@+id/textView11"
+            android:layout_alignEnd="@+id/textView11"
+            android:layout_alignTop="@+id/Reqian" />
+
+
+            <Button
+                android:id="@+id/QueDing"
+                android:layout_width="240px"
+                android:layout_height="80px"
+                android:background="@drawable/textviewone"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#838383"
+                android:textSize="40px"
+                android:layout_marginBottom="21dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/Reqianyishang"
+                android:layout_alignStart="@+id/Reqianyishang" />
+
+    </RelativeLayout>
+</RelativeLayout>

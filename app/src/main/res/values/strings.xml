@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">一位小主</string>
+    <string name="home_home">首页</string>
+    <string name="home_selected">选包</string>
+    <string name="home_upload">上传</string>
+    <string name="home_collection">收藏</string>
+    <string name="home_mine">我的</string>
+
+    <string name="set_set">设置</string>
+    <string name="set_safety">帐号与安全</string>
+    <string name="set_address">收货地址</string>
+    <string name="set_updated">版本更新</string>
+    <string name="set_clear">清除缓存</string>
+    <string name="set_on">关于共享包包</string>
+
+    <string name="personal_personal">个人资料</string>
+    <string name="personal_modify">修改头像</string>
+    <string name="personal_phone">手机号</string>
+    <string name="personal_name">用户名</string>
+    <string name="signature">个性签名</string>
+
+    <string name="collection_collection">收藏</string>
+    <string name="collection_management">管理</string>
+
+    <string name="registered_registered">新用户注册</string>
+
+
+    <string name="login_phone">请输入手机号：</string>
+    <string name="login_password">请输入密码：</string>
+    <string name="phone_new">请输入新手机号：</string>
+    <string name="verificationcode">验证码</string>
+
+    <string name="login_login">登录</string>
+    <string name="login_third">第三方快捷登录</string>
+    <string name="login_forget">忘记密码</string>
+    <string name="login_registered">立即注册</string>
+    <string name="password">找回密码</string>
+    <string name="verification">请输入验证码</string>
+    <string name="verification2">验证码</string>
+    <string name="verification1">请获取验证码</string>
+    <string name="confirm">确认</string>
+    <string name="button_dropout">退出登录</string>
+    <string name="submit_text">提交包包详情</string>
+
+    <string name="brand">品牌</string>
+    <string name="originalprice">原价</string>
+    <string name="size">尺码</string>
+    <string name="material">材质</string>
+    <string name="rentaltime">出租时间</string>
+    <string name="day">30天</string>
+    <string name="month">3个月</string>
+    <string name="long1">长期</string>
+    <string name="sell">是否愿意出售</string>
+    <string name="sellprice">出售价格</string>
+    <string name="text1">请上传高清图片，通过率更高</string>
+    <string name="agree1">提交就表示同意</string>
+    <string name="agree2">《包包的协议》</string>
+    <string name="submit_but">确认提交</string>
+
+    <string name="add_photos">添加照片</string>
+
+    <string name="yes1">是</string>
+    <string name="no1">否</string>
+    <string name="nickname">昵称</string>
+
+    <string name="phone">手机号</string>
+    <string name="data">个人资料</string>
+    <string name="modify_number">修改绑定手机号</string>
+    <string name="avatar">修改头像</string>
+    <string name="album">相册</string>
+    <string name="shoot">拍照</string>
+
+    <string name="my_wallet">我的钱包</string>
+</resources>
