@@ -245,9 +245,9 @@ public class OkHttpUtils implements IHttp {
                 List<String> cookies = headers.values("Set-Cookie");
 //                Log.e("OKhttpUtils","这是我的:"+call);
                 if(cookies.size()!=0){
-                    String session = cookies.get(0);
-                    Log.e("TGA","session"+session);
-                    SharePreUtils.setString(Constant.COOKIE,session);
+            //        String session = cookies.get(0);
+              //      Log.e("TGA","session"+session);
+                //    SharePreUtils.setString(Constant.COOKIE,session);
                 }
                 //执行在子线程中
                 APP.context.runOnUiThread(new Runnable() {

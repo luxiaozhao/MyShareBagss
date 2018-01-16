@@ -6,5 +6,5 @@ package com.share.bag;
 
 public class Constant {
     public static final String COOKIE="COOKIE";
-//        public static final String COOKIE="";
+
 }

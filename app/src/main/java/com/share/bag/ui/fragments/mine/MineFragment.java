@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.share.bag.Constant;
 import com.share.bag.R;
 import com.share.bag.base.BaseFragment;
@@ -18,7 +17,6 @@ import com.share.bag.ui.activitys.mine.LoginActivity;
 import com.share.bag.ui.activitys.mine.PersonalActivity;
 import com.share.bag.ui.activitys.mine.WalletActivity;
 import com.share.bag.utils.SharePreUtils;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -136,7 +134,15 @@ public class MineFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case mine_data://我的主页
-                getjudgment();
+                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+                    //登录
+                    loginintent = new Intent(getActivity(), LoginActivity.class);
+                }else{
+//          //个人中心
+                    loginintent=new Intent(getActivity(), PersonalActivity.class);
+                }
+                startActivity(loginintent);
+
                 break;
             case mine_cabinets://我的包柜
                 Toast.makeText(getActivity(), "我的包柜", Toast.LENGTH_SHORT).show();
@@ -202,27 +208,14 @@ public class MineFragment extends BaseFragment {
 ////                    登录
 //                    myset = new Intent(getActivity(), LoginActivity.class);
 //                }else{
+//                                            这里蹦了，怎么回事。
 ////                   个人中心
 //                    myset = new Intent(getActivity(), MySetActivity.class);
 //                }
 //                startActivity(myset);
 
-
-
                 break;
         }
     }
 
-    public void getjudgment() {
-
-        if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-            //登录
-            loginintent = new Intent(getActivity(), LoginActivity.class);
-        }else{
-//          //个人中心
-            loginintent=new Intent(getActivity(), PersonalActivity.class);
-        }
-        startActivity(loginintent);
-
-    }
 }
