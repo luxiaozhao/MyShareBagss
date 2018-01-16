@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -97,7 +96,13 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
         adapter.setOnClickedListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "收藏成功", Toast.LENGTH_SHORT).show();
+
+//                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+//
+//                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(getActivity(), "收藏成功", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 

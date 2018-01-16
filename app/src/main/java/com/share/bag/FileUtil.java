@@ -164,6 +164,27 @@ public  class FileUtil {
         editor.putString("pass",pass);
         editor.commit();
     }
+
+    public static void saveToPre1(Context context, String name, String pass,String id,String gender,String nickname,String imageurl) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("name",name);
+        editor.putString("pass",pass);
+        editor.putString("id",id);
+        editor.putString("gender",gender);
+        editor.putString("nickname",nickname);
+        editor.putString("imageurl",imageurl);
+        editor.commit();
+    }
+/*
+*  "id": "39",
+        "username": "17801190741",
+        "password": "25f9e794323b453885f5181f1b624d0b",
+        "gender": "男",
+        "iconurl": "/Uploads/20180115/5a5c759804236.png",
+        "name": "5
+* */
+
     /**
      * 使用SharedPreference进行读取保存的用户名和密码
      * @param context
