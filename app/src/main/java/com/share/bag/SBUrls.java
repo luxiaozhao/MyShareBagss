@@ -22,6 +22,7 @@ public class SBUrls {
     public static final String LOGURL="http://baobaoapi.ldlchat.com";
     //    ------------------------------ 字符 -----------------------------------------''
     public static final String TOKEN = "TOKEN";
+
     public static final String UPDATA_IMG = "http://baobaoapi.ldlchat.com/index.php?s=/Home/Public/upheaderimg.html";
 
     //popo

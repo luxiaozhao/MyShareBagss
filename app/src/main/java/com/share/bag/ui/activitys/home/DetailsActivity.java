@@ -7,17 +7,24 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.share.bag.Constant;
 import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.adapter.CosTomPageAdapter;
 import com.share.bag.base.BaseActivity;
 import com.share.bag.entity.DeailsBean;
+import com.share.bag.ui.activitys.mine.LoginActivity;
 import com.share.bag.ui.fragments.page.CommentsFragment;
 import com.share.bag.ui.fragments.page.DetalisFragment;
+import com.share.bag.ui.pay.BuyActivity;
+import com.share.bag.ui.pay.RentActivity;
+import com.share.bag.utils.SharePreUtils;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.youth.banner.Banner;
@@ -32,6 +39,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DetailsActivity extends BaseActivity {
 
@@ -46,6 +54,12 @@ public class DetailsActivity extends BaseActivity {
     Banner DetailsBanner;
     @BindView(R.id.pager)
     CustomViewPager pager;
+    @BindView(R.id.details_button_collection)
+    Button detailsButtonCollection;
+    @BindView(R.id.details_button_rent)
+    Button detailsButtonRent;
+    @BindView(R.id.details_button_buy)
+    Button detailsButtonBuy;
 
     private String tmp;
     //             Banner   List
@@ -64,7 +78,7 @@ public class DetailsActivity extends BaseActivity {
     private FragmentManager fragmentManager;
 
     @Override
-
+//    Details_return
     public int initLayout() {
         return R.layout.activity_details;
     }
@@ -87,11 +101,7 @@ public class DetailsActivity extends BaseActivity {
         OkHttpUtils.getInstance().post(SBUrls.DETAILSURL, map, new MyNetWorkCallback<DeailsBean>() {
             @Override
             public void onSuccess(DeailsBean deailsBean) {
-
-                Log.e("TAG----", deailsBean.toString());
-
                 List<String> img = deailsBean.getImg();
-
 
                 for (int i = 0; i < img.size(); i++) {
                     String s = "http://" + img.get(i);
@@ -153,6 +163,56 @@ public class DetailsActivity extends BaseActivity {
         return false;
     }
 
+    @OnClick(R.id.Details_return)
+    public void onViewClicked() {
+        finish();
+    }
+
+    @OnClick({R.id.details_button_collection, R.id.details_button_rent, R.id.details_button_buy})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.details_button_collection:
+
+                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+//                    登录
+                    Intent loginintent = new Intent(DetailsActivity.this, LoginActivity.class);
+                    startActivity(loginintent);
+                }else{
+                    Toast.makeText(DetailsActivity.this, "收藏成功", Toast.LENGTH_SHORT).show();
+                }
+
+                Toast.makeText(this, "收藏成功", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.details_button_rent:
+
+                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+//                    登录
+                    Intent detailsloginintent = new Intent(DetailsActivity.this, LoginActivity.class);
+                    startActivity(detailsloginintent);
+                }else{
+//                    确认租下
+                    Intent rentloginintent = new Intent(DetailsActivity.this, RentActivity.class);
+                    startActivity(rentloginintent);
+                }
+
+                break;
+            case R.id.details_button_buy:
+                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+//                    登录
+                    Intent loginintent = new Intent(DetailsActivity.this, LoginActivity.class);
+                    startActivity(loginintent);
+                }else{
+//                    确认租下
+                    Intent buyloginintent = new Intent(DetailsActivity.this, BuyActivity.class);
+                    startActivity(buyloginintent);
+                }
+
+
+                break;
+        }
+    }
+
 
     //                      Banner Volder
     public class GlideImage extends ImageLoader {
@@ -168,8 +228,6 @@ public class DetailsActivity extends BaseActivity {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
-
-
 
 
 }

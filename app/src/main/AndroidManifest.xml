@@ -136,7 +136,10 @@
         <activity android:name=".ui.activitys.home.DetailsActivity" />
         <activity android:name=".ui.activitys.mine.PersonalActivity" />
         <activity android:name=".ui.activitys.mine.WalletActivity" />
-        <activity android:name=".ui.activitys.mine.PhoneActivity"></activity>
+        <activity android:name=".ui.activitys.mine.PhoneActivity" />
+        <activity android:name=".ui.activitys.mine.MySetActivity" />
+        <activity android:name=".ui.pay.RentActivity" />
+        <activity android:name=".ui.pay.BuyActivity"></activity>
     </application>
 
 </manifest>

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.share.bag.R;
@@ -39,28 +38,49 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     public void onBindViewHolder(PopularAdapter.ViewHolder holder, int position) {
 //        holder.recyler_commodity.setImageResource(list.get(position).getImg());
         Glide.with(context).load(SBUrls.LOGURL+list.get(position).getImg()).into(holder.recyler_commodity);
-        holder.recyler_Collection.setImageResource(R.mipmap.shoucang1);
+
+        if (list.get(position).getIslive().equals("false")) {
+            holder.recyler_Collection.setImageResource(R.mipmap.shoucang1);
+        }else {
+            holder.recyler_Collection.setImageResource(R.mipmap.shoucanghong1);
+        }
+
+
         holder.recyler_name.setText(list.get(position).getTitle());
         holder.recyler_price.setText(list.get(position).getDays_money());
         holder.recyler_money.setText(list.get(position).getOriginalprice());
+
+        if (onClickedListener != null) {
+            holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickedListener.onClick(view);
+                }
+            });
+        }
+
 //        originalprice
 
-        holder.recyler_commodity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "收藏成功", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.recyler_commodity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//        holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "收藏成功", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
+    private View.OnClickListener onClickedListener;
 
+    public void setOnClickedListener(View.OnClickListener onClickedListener) {
+        this.onClickedListener = onClickedListener;
+    }
     @Override
     public int getItemCount() {
         return list.size();

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.share.bag.ui.activitys.mine.MySetActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:id="@+id/relativeLayout2">
+
+        <ImageView
+            android:id="@+id/myset_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50px"
+            android:src="@mipmap/xiaoyu3" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/set_set"
+            android:textSize="50px"
+            android:textColor="@color/color_black"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:background="#F2F2F2"/>
+
+    <!--ScrollView-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/myset_safety"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/myset_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/set_safety" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/myset_text1"
+                android:layout_marginEnd="36dp"
+                android:src="@mipmap/wode_zhankaiyou3" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/myset_updated"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/myset_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/set_updated" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/myset_text2"
+                android:layout_marginEnd="36dp"
+                android:src="@mipmap/wode_zhankaiyou3" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+        <RelativeLayout
+            android:id="@+id/myset_clear"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/myset_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/set_clear" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.3M"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/myset_text3"
+                android:layout_marginEnd="36dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/myset_on"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/myset_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50px"
+                android:text="@string/set_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.3M"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/myset_text4"
+                android:layout_marginEnd="36dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="#F2F2F2"/>
+
+        <LinearLayout
+            android:layout_marginTop="100px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/myset_dropout"
+                android:layout_width="864px"
+                android:layout_height="145px"
+                android:text="@string/button_dropout"
+                android:textColor="#FFF"
+                android:textSize="51px"
+                android:background="@drawable/frame"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

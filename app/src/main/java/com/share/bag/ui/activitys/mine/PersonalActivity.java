@@ -213,12 +213,38 @@ public class PersonalActivity extends BaseActivity {
 //      压缩图片
         ByteArrayOutputStream onputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,onputStream);
-        byte[] bytes = onputStream.toByteArray();
+        final byte[] bytes = onputStream.toByteArray();
 
+
+//           final Map<String, String> map = new HashMap<>();
+//            final Map<String, String> stringObserverMap=new HashMap<>();
+//        stringObserverMap.put("uploadAvatar",""+bytes);
+
+//        OkHttpUtils.getInstance().post(SBUrls.UPDATA_IMG, stringObserverMap, new MyNetWorkCallback<HeadImgBean>() {
+//            @Override
+//            public void onSuccess(HeadImgBean headImgBean) {
+//                Toast.makeText(PersonalActivity.this, "图片的二进制"+bytes.toString(), Toast.LENGTH_SHORT).show();
+//
+//                Log.e("TAG--------","图片的二进制"+bytes.toString());
+//                com.share.bag.utils.ToastUtils.show(PersonalActivity.this , headImgBean.getInfo()+"返回值"+headImgBean.getStatus());
+//
+//
+//            }
+//
+//            @Override
+//            public void onError(int errorCode, String errorMsg) {
+//
+//            }
+//        });
         OkHttpUtils.getInstance().updataImg(SBUrls.UPDATA_IMG, bytes, new MyNetWorkCallback<HeadImgBean>() {
             @Override
             public void onSuccess(HeadImgBean headImgBean) {
-                com.share.bag.utils.ToastUtils.show(PersonalActivity.this , "上传成功");
+
+                com.share.bag.utils.ToastUtils.show(PersonalActivity.this ,bytes.toString() +""+headImgBean.getInfo()+"-----"+headImgBean.getStatus());
+
+                Log.e("TAG",bytes.toString() +""+headImgBean.getInfo()+"-----"+headImgBean.getStatus());
+
+
             }
 
             @Override
@@ -236,7 +262,6 @@ public class PersonalActivity extends BaseActivity {
         } else {
             PhotoUtils.openPic(this, CODE_GALLERY_REQUEST);
         }
-
     }
 
 

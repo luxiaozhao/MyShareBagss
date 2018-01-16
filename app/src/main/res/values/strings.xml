@@ -12,6 +12,7 @@
     <string name="set_updated">版本更新</string>
     <string name="set_clear">清除缓存</string>
     <string name="set_on">关于共享包包</string>
+    <string name="set_dropout">退出登录</string>
 
     <string name="personal_personal">个人资料</string>
     <string name="personal_modify">修改头像</string>
@@ -71,4 +72,6 @@
     <string name="shoot">拍照</string>
 
     <string name="my_wallet">我的钱包</string>
+    <string name="confirm_rent">确认租</string>
+
 </resources>

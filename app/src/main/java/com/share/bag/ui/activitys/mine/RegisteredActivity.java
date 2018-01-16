@@ -31,7 +31,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.share.bag.R.id.registered_obtain;
-
+/*
+* 新用户注册
+*
+* */
 public class RegisteredActivity extends BaseActivity {
 
     @BindView(R.id.registered_return)

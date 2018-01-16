@@ -8,7 +8,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -36,6 +36,9 @@ android {
 
 
 
+
+
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -43,7 +46,6 @@ dependencies {
     })
 
 //圆形图片
-    
 
 
     compile files('libs/open_sdk_r5788_lite.jar')
@@ -56,7 +58,7 @@ dependencies {
     compile files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
     compile files('libs/weiboSDKCore.jar')
     // compile 'com.android.support:support-v4:25.3.1'
-    compile'com.jiechic.library:xUtils:2.6.14'
+    compile 'com.jiechic.library:xUtils:2.6.14'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

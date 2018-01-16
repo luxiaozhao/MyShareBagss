@@ -18,6 +18,7 @@ import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.utils.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -119,7 +120,22 @@ public class LoginActivity extends BaseActivity {
                 if (info.equals("1")){
                     Toast.makeText(LoginActivity.this, "登录成功"+loginBean.getMsg().getUsername(), Toast.LENGTH_SHORT).show();
 //                    startActivity(new Intent(LoginActivity.this, MineFragment.class));
-                    finish();
+                    Toast.makeText(LoginActivity.this, "返回值是："+loginBean.getMsg().getId()
+                            +"用户名"+loginBean.getMsg().getUsername()
+                            +"用户名"+loginBean.getMsg().getPassword()
+                            +"密码"+loginBean.getMsg().getGender()
+                                    +"图片"+loginBean.getMsg().getIconurl()
+                                    +"昵称"+loginBean.getMsg().getName() ,
+                            Toast.LENGTH_SHORT).show();
+
+                    Log.e("TAG-----","返回值是："+loginBean.getMsg().getId()
+                            +"用户名"+loginBean.getMsg().getUsername()
+                            +"用户名"+loginBean.getMsg().getPassword()
+                            +"密码"+loginBean.getMsg().getGender()
+                            +"图片"+loginBean.getMsg().getIconurl()
+                            +"昵称"+loginBean.getMsg().getName());
+
+//                    finish();
                 }
                 else {
                     Toast.makeText(LoginActivity.this, loginBean.getInfo(), Toast.LENGTH_SHORT).show();
@@ -131,21 +147,6 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
-
-/*
-            @Override
-            public void onSuccess(LoginBean loginBean) {
-//                SharePreUtils.setString(SBUrls.TOKEN,"");
-//                SharePreUtils.getString(SBUrls.TOKEN,"")
-                Toast.makeText(LoginActivity.this, loginBean.getInfo()+"--"+loginBean.getStatus(), Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(LoginActivity.this,MainActivity.class));
-            }
-
-            @Override
-            public void onError(int errorCode, String errorMsg) {
-
-            }
-        });*/
 
     }
 

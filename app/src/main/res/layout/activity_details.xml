@@ -93,6 +93,7 @@
 
 
         <Button
+            android:id="@+id/details_button_collection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -101,6 +102,7 @@
             android:textColor="#FFF" />
 
         <Button
+            android:id="@+id/details_button_rent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -109,6 +111,7 @@
             android:textColor="#FD837D" />
 
         <Button
+            android:id="@+id/details_button_buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

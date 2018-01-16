@@ -25,9 +25,6 @@
             android:textSize="15sp" />
 
         <include layout="@layout/featured_leisure" />
-
-        <include layout="@layout/featured_banquet" />
-
         <TextView
             android:id="@+id/mFestname"
             android:layout_width="wrap_content"
@@ -39,6 +36,9 @@
             android:text="宴会轻奢"
             android:textColor="#303030"
             android:textSize="15sp" />
+        <include layout="@layout/featured_banquet" />
+
+
 
         <TextView
             android:id="@+id/mBusinessname"

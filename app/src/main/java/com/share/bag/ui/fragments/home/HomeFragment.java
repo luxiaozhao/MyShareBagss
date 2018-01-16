@@ -195,6 +195,38 @@ public class HomeFragment extends BaseFragment {
     TextView textView8;
     @BindView(R.id.linearLayout2)
     LinearLayout linearLayout2;
+
+
+
+    //社会轻宴
+    @BindView(R.id.home_banquet_img1)
+    RelativeLayout home_banquet_img1;
+
+    @BindView(R.id.home_banquet_img2)
+    RelativeLayout home_banquet_img2;
+
+    @BindView(R.id.home_banquet_img3)
+    RelativeLayout home_banquet_img3;
+
+    @BindView(R.id.home_banquet_img4)
+    RelativeLayout home_banquet_img4;
+
+    //商务办公  R.id.home_business_img4
+    @BindView(R.id.home_business_img1)
+    RelativeLayout home_business_img1;
+
+
+    @BindView(R.id.home_business_img2)
+    RelativeLayout home_business_img2;
+
+
+    @BindView(R.id.home_business_img3)
+    RelativeLayout home_business_img3;
+
+    @BindView(R.id.home_business_img4)
+    RelativeLayout home_business_img4;
+
+
     //分享图片
     @BindView(R.id.home_share)
     ImageView homeShare;
@@ -436,7 +468,7 @@ public class HomeFragment extends BaseFragment {
         });
 
 
-        getmonitor();
+//        getmonitor();
     }
 
     private void forEashs(HomeFragmentBean homeFragmentBean, int i, HomeFragmentBean.ListBean listBean) {
@@ -501,11 +533,18 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    @OnClick({brand_img1, R.id.brand_img2, R.id.brand_img3,R.id.home_leisure_img1,R.id.home_leisure_img2,R.id.home_leisure_img3})
+    @OnClick({brand_img1, R.id.brand_img2, R.id.brand_img3,R.id.home_leisure_img1,R.id.home_leisure_img2,R.id.home_leisure_img3,
+            R.id.home_banquet_img1,R.id.home_banquet_img2,R.id.home_banquet_img3,R.id.home_banquet_img4,
+            R.id.home_business_img1,R.id.home_business_img2,R.id.home_business_img3,R.id.home_business_img4
+    })
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case brand_img1://品牌专区图片1 
-                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(context, DetailsActivity.class);
+
+                intent1.putExtra("details", homeBrandimg1id2);
+                startActivity(intent1);
 //                Log.e("TAG","---------"+homeBrandimg1id);
 
 //                Intent intent1 = new Intent(context, DetailsActivity.class);
@@ -573,31 +612,98 @@ public class HomeFragment extends BaseFragment {
                 startActivity(intent6);
                 break;
 //            home_banquet_img1每日精选——宴会轻奢
+//
+            case R.id.home_banquet_img1://休闲度假3
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent7 = new Intent(context, DetailsActivity.class);
+
+                intent7.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent7);
+                break;
+
+
+            case R.id.home_banquet_img2://休闲度假3
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent8 = new Intent(context, DetailsActivity.class);
+
+                intent8.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent8);
+                break;
+
+            case R.id.home_banquet_img3://休闲度假3
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent9 = new Intent(context, DetailsActivity.class);
+
+                intent9.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent9);
+                break;
+
+
+            case R.id.home_banquet_img4://休闲度假3
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent0 = new Intent(context, DetailsActivity.class);
+
+                intent0.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent0);
+                break;
+
+//            android:id="@+id/home_business_img1"
+//            每日精选——商务办公
+            case R.id.home_business_img1://商务办公1
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent11 = new Intent(context, DetailsActivity.class);
+
+                intent11.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent11);
+                break;
+
+            case R.id.home_business_img2://商务办公2
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent12 = new Intent(context, DetailsActivity.class);
+
+                intent12.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent12);
+                break;
+
+            case R.id.home_business_img3://商务办公3
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent13 = new Intent(context, DetailsActivity.class);
+
+                intent13.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent13);
+                break;
+
+            case R.id.home_business_img4://商务办公4
+//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
+                Intent intent14 = new Intent(context, DetailsActivity.class);
+
+                intent14.putExtra("details", homeBrandimg1id3);
+
+                startActivity(intent14);
+                break;
+
+
+
 
         }
     }
 
     @OnClick(R.id.home_share)
     public void onViewClicked() {
-
+        Toast.makeText(getActivity(), "点击了分享", Toast.LENGTH_SHORT).show();
     }
 
     @OnClick(R.id.mLinearBaoBao)
     public void onViewLinear() {
         Intent intent = new Intent(context, TalentActivity.class);
         startActivity(intent);
-    }
-
-    public void getmonitor() {
-
-        homeShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "点击了分享", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
     }
 
 
