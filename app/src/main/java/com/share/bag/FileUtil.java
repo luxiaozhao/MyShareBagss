@@ -51,23 +51,6 @@ public  class FileUtil {
         tname.setText(name);
         tpass.setText(pass);
     }
-    public static void readFromPre1(Context context, TextView name1, TextView nickname, TextView imageurl) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
-        String name = sharedPreferences.getString("name", "");
-//        String pass = sharedPreferences.getString("pass", "");
-//        String id1 = sharedPreferences.getString("id", "");
-//        String gender1 = sharedPreferences.getString("gender", "");
-        String nickname1 = sharedPreferences.getString("nickname", "");
-        String imageurl1 = sharedPreferences.getString("imageurl", "");
-
-        name1.setText(name);
-//        pass1.setText(pass);
-//        id.setText(id1);
-//        gender.setText(gender1);
-        nickname.setText(nickname1);
-        imageurl.setText(imageurl1);
-
-    }
 
 /*
 * 我的主页的sp
@@ -77,27 +60,24 @@ public  class FileUtil {
 
         String nickname1 = sharedPreferences.getString("nickname", "");
         String imageurl = sharedPreferences.getString("imageurl", "");
-
-
         nickname.setText(nickname1);
         Glide.with(context).load("http://baobaoapi.ldlchat.com/"+imageurl).into(touxiangurl);
-    }///baobaoapi.ldlchat.com/Uploads/20180115/5a5c759804236.png
-    public static void readFromPre3(Context context,  String nickname) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+    }
 
-        String nickname1 = sharedPreferences.getString("nickname", "");
-        nickname = nickname1;
+
+    public static void SelectedreadFromPre(Context context, TextView tname) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("name","");
+        tname.setText(name);
 
     }
 
 
-
-
-
-
+/*
+* 清空sp内容
+* */
     public static void shanchu(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
-
         sharedPreferences.edit().clear().commit();
     }
 

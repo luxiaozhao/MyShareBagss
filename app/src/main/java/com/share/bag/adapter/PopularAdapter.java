@@ -62,23 +62,6 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
                 }
             });
         }
-
-//        originalprice
-
-//        holder.recyler_commodity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(context, "点击了图片", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//        holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(context, "收藏成功", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
     }
     private View.OnClickListener onClickedListener;
     private  View.OnClickListener onitemlistener;

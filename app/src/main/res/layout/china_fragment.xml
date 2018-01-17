@@ -17,7 +17,8 @@
                 android:layout_height="420px"
                 android:background="@drawable/wode_beijing3">
 
-                <ImageView
+
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/mine_avatar"
                     android:layout_width="156px"
                     android:layout_height="156px"

@@ -65,7 +65,7 @@
             android:id="@+id/personal_avatar1"
             android:layout_width="124px"
             android:layout_height="124px"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/touxiang22"
             android:layout_marginEnd="44px"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/imageView8" />

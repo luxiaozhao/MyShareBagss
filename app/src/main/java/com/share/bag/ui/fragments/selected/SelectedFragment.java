@@ -1,6 +1,7 @@
 package com.share.bag.ui.fragments.selected;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -23,9 +25,12 @@ import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.adapter.PopularAdapter;
 import com.share.bag.base.BaseFragment;
+import com.share.bag.entity.CollectionBean;
 import com.share.bag.entity.selected.SelectedBean;
+import com.share.bag.ui.activitys.home.DetailsActivity;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.ByteCallBack;
+import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +52,8 @@ import static com.share.bag.R.id.DanJianTwo;
  */
 //选包
 public class SelectedFragment extends BaseFragment implements View.OnClickListener {
-
+@BindView(R.id.select_user)
+    TextView select_user;
     @BindView(R.id.search_et_input)
     EditText searchEtInput;
     @BindView(R.id.selected_recyclerview)
@@ -87,10 +93,19 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-       String nicheng="";
 
-        FileUtil.readFromPre3(getActivity(),nicheng);
-        Toast.makeText(getActivity(), "-----------"+nicheng, Toast.LENGTH_SHORT).show();
+
+        FileUtil.SelectedreadFromPre(getActivity(),select_user);
+//        Toast.makeText(getActivity(), "-----------"+select_user.getText().toString(), Toast.LENGTH_SHORT).show();
+//
+        
+        if (select_user.getText().equals("")){
+            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+        }else {
+//           登录成功后网络请求
+            getpopular();
+        }
+        
 //     设置  Manager
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
         selectedRecyclerview.setLayoutManager(manager);
@@ -99,34 +114,80 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
 //        RecyclerAdapterWithHF recyclerAdapterWithHF = new RecyclerAdapterWithHF(adapter);
         selectedRecyclerview.setAdapter(adapter);
         adapter.setOnClickedListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "收藏成功", Toast.LENGTH_SHORT).show();
 
 
 
+                if (select_user.getText().equals("")){
+                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getActivity(), "登录成功", Toast.LENGTH_SHORT).show();
 
 
-//
-//                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-//
-//                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
-//                }else{
-//                    Toast.makeText(getActivity(), "收藏成功", Toast.LENGTH_SHORT).show();
-//                }
+                }
+
+
             }
         });
             adapter.setOnitemClickedListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    Toast.makeText(getActivity(), "DIANJIJADDIJ", Toast.LENGTH_SHORT).show();
+                public void onClick(View view) {//详情页
+
+                    Intent intent1 = new Intent(getActivity(), DetailsActivity.class);
+
+                    intent1.putExtra("details", ""+1);
+                    startActivity(intent1);
+
                 }
             });
-        getpopular();
+    }
+    public void getselect() {
+
+                    Map<String ,String> collection=new HashMap();
+                    collection.put("baglist_id","1");
+                    OkHttpUtils.getInstance().post(SBUrls.COLLECTION, collection, new MyNetWorkCallback<CollectionBean>() {
+                        @Override
+                        public void onSuccess(CollectionBean collectionBean) {
+                            String status = collectionBean.getInfo();
+                            Toast.makeText(getActivity(), "----"+status, Toast.LENGTH_SHORT).show();
+                            getselect();
+//                            adapter.notifyDataSetChanged();// notifyDataSetChanged
+
+                        }
+
+                        @Override
+                        public void onError(int errorCode, String errorMsg) {
+                            Toast.makeText(getActivity(), "----"+errorMsg, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+
+
+//                    OkHttpUtils.getInstance().post();
+//                    OkHttpUtils.getInstance().post(SBUrls.COLLECTION, collection, new MyNetWorkCallback<CollectionBean>() {
+//                        @Override
+//                        public void onSuccess(CollectionBean collectionBean) {
+//
+//                            String status = collectionBean.getStatus();
+//
+//                            Toast.makeText(getActivity(), "======"+status, Toast.LENGTH_SHORT).show();
+//
+//
+//                        }
+//
+//                        @Override
+//                        public void onError(int errorCode, String errorMsg) {
+//
+//                        }
+//                    }
+// );
 
 
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO: inflate aj fragment view

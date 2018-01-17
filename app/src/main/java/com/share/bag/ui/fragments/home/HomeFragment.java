@@ -15,14 +15,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.share.bag.APP;
 import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.base.BaseFragment;
 import com.share.bag.entity.HomeFragmentBean;
 import com.share.bag.ui.activitys.collection.TalentActivity;
 import com.share.bag.ui.activitys.home.DetailsActivity;
-import com.share.bag.utils.ToastUtils;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.zhouwei.mzbanner.MZBannerView;
@@ -501,7 +499,7 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onPageClick(View view, int position) {
 //             轮播图 监听
-                ToastUtils.show(APP.context, "wo是" + position);
+//                ToastUtils.show(APP.context, "wo是" + position);
             }
         });
     }

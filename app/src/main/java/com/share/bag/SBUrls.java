@@ -20,6 +20,9 @@ public class SBUrls {
 //      选包（热门）界面
     public static final String POPULAR ="http://baobaoapi.ldlchat.com/index.php?s=/Home/Backlist/bagtolist.html";
     public static final String LOGURL="http://baobaoapi.ldlchat.com";
+
+//                        Collection
+    public static final String COLLECTION="http://baobaoapi.ldlchat.com/index.php?s=/Home/Backcontent/collection.html";
     //    ------------------------------ 字符 -----------------------------------------''
     public static final String TOKEN = "TOKEN";
 
