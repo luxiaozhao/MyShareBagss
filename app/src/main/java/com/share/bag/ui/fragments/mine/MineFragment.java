@@ -101,6 +101,7 @@ public class MineFragment extends BaseFragment {
     private Intent loginintent;
     private Intent loginintent1;
     private Intent myset;
+    private String s;
 
     @Override
     public int initLayout() {
@@ -116,6 +117,9 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
+//        FileUtil.readFromPre2(getActivity(),mine_name);
+        s = mine_name.getText().toString();
 
     }
 
@@ -133,6 +137,25 @@ public class MineFragment extends BaseFragment {
         unbinder.unbind();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==0&&resultCode==0){
+
+            if (data!=null){
+                String name = data.getStringExtra("name");
+                String img = data.getStringExtra("img");
+                Glide.with(getContext()).load("http://baobaoapi.ldlchat.com"+img).into(mineAvatar);
+//            Glide.with(getActivity()).load("http://baobaoapi.ldlchat.com "+img).error(R.mipmap.ic_launcher).into(mineAvatar);
+                Log.e("2222222222222","http://baobaoapi.ldlchat.com "+img);
+//            Toast.makeText(getContext(), "http://baobaoapi.ldlchat.com "+img, Toast.LENGTH_SHORT).show();
+                mine_name.setText(name);
+            }
+
+
+        }
+    }
+
     @OnClick({ R.id.mine_data,R.id.mine_cabinets,R.id.mine_wallet,R.id.mine_shared,
             R.id.mine_Pay, R.id.mine_Sign,R.id.mine_ship, R.id.mine_return,
             R.id.mine_invite, R.id.mine_address,R.id.mine_contact, R.id.mine_problem,
@@ -141,19 +164,28 @@ public class MineFragment extends BaseFragment {
         switch (view.getId()) {
             case mine_data://我的主页
 
-//                loginintent = new Intent(getActivity(), LoginActivity.class);
-//                SharePreUtils.clear();
-                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-                    //登录
+                if (  s.equals("请登录")){
+                    Toast.makeText(getActivity(), "登录成功"+s, Toast.LENGTH_SHORT).show();
                     loginintent = new Intent(getActivity(), LoginActivity.class);
                     startActivityForResult(loginintent,0);
-
-                }else{
-//          //个人中心
+                }else {
                     loginintent=new Intent(getActivity(), PersonalActivity.class);
                     startActivity(loginintent);
-
+                    Toast.makeText(getActivity(), "失败"+s, Toast.LENGTH_SHORT).show();
                 }
+
+
+//                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
+//                    //登录
+//                    loginintent = new Intent(getActivity(), LoginActivity.class);
+//                    startActivityForResult(loginintent,0);
+//
+//                }else{
+////          //个人中心
+//                    loginintent=new Intent(getActivity(), PersonalActivity.class);
+//                    startActivity(loginintent);
+//
+//                }
 
                 break;
             case mine_cabinets://我的包柜
@@ -237,44 +269,10 @@ public class MineFragment extends BaseFragment {
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==0&&resultCode==0){
-            String name = data.getStringExtra("name");
-            String img = data.getStringExtra("img");
-            Glide.with(getContext()).load("http://baobaoapi.ldlchat.com"+img).into(mineAvatar);
-//            Glide.with(getActivity()).load("http://baobaoapi.ldlchat.com "+img).error(R.mipmap.ic_launcher).into(mineAvatar);
-                    Log.e("2222222222222","http://baobaoapi.ldlchat.com "+img);
-//            Toast.makeText(getContext(), "http://baobaoapi.ldlchat.com "+img, Toast.LENGTH_SHORT).show();
-            mine_name.setText(name);
-        }
-    }
-
-    @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if (!hidden){
 
         }
     }
-
-
-    //    @Override
-//    public void onHiddenChanged(boolean hidden) {
-//        // TODO Auto-generated method stub
-//        super.onHiddenChanged(hidden);
-//        if (!hidden) {
-////            firstRefresh();
-//
-//        }
-//    }
-
-//判断是否登录
-
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode==0&&resultCode==0){
-//            data.getIntExtra();
-//        }
-//    }
 }

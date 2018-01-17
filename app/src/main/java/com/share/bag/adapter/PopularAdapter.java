@@ -21,7 +21,6 @@ import java.util.List;
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder>{
     private Context context;
     private List<SelectedBean> list;
-
     public PopularAdapter(Context context, List<SelectedBean> list) {
         this.context = context;
         this.list = list;
@@ -49,7 +48,12 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         holder.recyler_name.setText(list.get(position).getTitle());
         holder.recyler_price.setText(list.get(position).getDays_money());
         holder.recyler_money.setText(list.get(position).getOriginalprice());
-
+        holder.recyler_commodity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onitemlistener.onClick(view);
+            }
+        });
         if (onClickedListener != null) {
             holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -77,9 +81,15 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     }
     private View.OnClickListener onClickedListener;
+    private  View.OnClickListener onitemlistener;
 
     public void setOnClickedListener(View.OnClickListener onClickedListener) {
         this.onClickedListener = onClickedListener;
+
+    }
+    public void setOnitemClickedListener(View.OnClickListener Listener) {
+        this.onitemlistener = Listener;
+
     }
     @Override
     public int getItemCount() {

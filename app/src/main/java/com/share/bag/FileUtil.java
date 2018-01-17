@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -176,14 +177,6 @@ public  class FileUtil {
         editor.putString("imageurl",imageurl);
         editor.commit();
     }
-/*
-*  "id": "39",
-        "username": "17801190741",
-        "password": "25f9e794323b453885f5181f1b624d0b",
-        "gender": "男",
-        "iconurl": "/Uploads/20180115/5a5c759804236.png",
-        "name": "5
-* */
 
     /**
      * 使用SharedPreference进行读取保存的用户名和密码
@@ -197,6 +190,31 @@ public  class FileUtil {
         String pass = sharedPreferences.getString("pass","");
         tname.setText(name);
         tpass.setText(pass);
+    }
+    public static void readFromPre1(Context context, TextView name1, TextView pass1, TextView id, TextView gender, TextView nickname, TextView imageurl) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("name", "");
+        String pass = sharedPreferences.getString("pass", "");
+        String id1 = sharedPreferences.getString("id", "");
+        String gender1 = sharedPreferences.getString("gender", "");
+        String nickname1 = sharedPreferences.getString("nickname", "");
+        String imageurl1 = sharedPreferences.getString("imageurl", "");
+
+        name1.setText(name);
+        pass1.setText(pass);
+        id.setText(id1);
+        gender.setText(gender1);
+        nickname.setText(nickname1);
+        imageurl.setText(imageurl1);
+    }
+
+
+    public static void readFromPre2(Context context,  TextView nickname) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+
+        String nickname1 = sharedPreferences.getString("nickname", "");
+        nickname.setText(nickname1);
+
     }
 }
 
