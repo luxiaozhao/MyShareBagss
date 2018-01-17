@@ -1,7 +1,6 @@
 package com.share.bag.ui.fragments.selected;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -27,7 +26,6 @@ import com.share.bag.adapter.PopularAdapter;
 import com.share.bag.base.BaseFragment;
 import com.share.bag.entity.CollectionBean;
 import com.share.bag.entity.selected.SelectedBean;
-import com.share.bag.ui.activitys.home.DetailsActivity;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.ByteCallBack;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
@@ -113,36 +111,42 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
         adapter = new PopularAdapter(getContext(), mList);
 //        RecyclerAdapterWithHF recyclerAdapterWithHF = new RecyclerAdapterWithHF(adapter);
         selectedRecyclerview.setAdapter(adapter);
-        adapter.setOnClickedListener(new View.OnClickListener() {
-
-
+        adapter.setOnitemClickedListener(new PopularAdapter.OnitemClickedListener() {
             @Override
-            public void onClick(View view) {
-
-
-
-                if (select_user.getText().equals("")){
-                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getActivity(), "登录成功", Toast.LENGTH_SHORT).show();
-
-
-                }
-
-
+            public void Back(View v, int position) {
+                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
             }
         });
-            adapter.setOnitemClickedListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {//详情页
+        adapter.setCallback(new PopularAdapter.AdapterCallback() {
+            @Override
+            public void callBack(View v, int position) {
+                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+//                if (select_user.getText().equals("")){
+//                    Toast.makeText(getActivity(), "请先登录"+position, Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(getActivity(), "登录成功"+position, Toast.LENGTH_SHORT).show();
+//
+//
+//                }
+            }
+        });
 
-                    Intent intent1 = new Intent(getActivity(), DetailsActivity.class);
-
-                    intent1.putExtra("details", ""+1);
-                    startActivity(intent1);
-
-                }
-            });
+//        adapter.setOnClickedListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            }
+//        });
+//            adapter.setOnitemClickedListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {//详情页
+//
+////                    Intent intent1 = new Intent(getActivity(), DetailsActivity.class);
+////
+////                    intent1.putExtra("details", ""+1);
+////                    startActivity(intent1);
+//
+//                }
+//            });
     }
     public void getselect() {
 

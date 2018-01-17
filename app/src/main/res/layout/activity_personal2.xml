@@ -55,38 +55,42 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/avatar"
-            android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="36px" />
+            android:layout_centerVertical="true"
+            android:layout_marginStart="36px"
+            android:text="@string/avatar" />
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/personal_avatar1"-->
+            <!--android:layout_width="124px"-->
+            <!--android:layout_height="124px"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="44px"-->
+            <!--android:layout_toStartOf="@+id/imageView8"-->
+            <!--android:src="@drawable/touxiang22" />-->
+        <ImageView
             android:id="@+id/personal_avatar1"
             android:layout_width="124px"
             android:layout_height="124px"
-            android:src="@drawable/touxiang22"
-            android:layout_marginEnd="44px"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/imageView8" />
-
-
+            android:layout_marginEnd="44px"
+            android:layout_toStartOf="@+id/imageView8"
+            android:src="@drawable/touxiang22" />
 
         <ImageView
+            android:id="@+id/imageView8"
             android:layout_width="50px"
             android:layout_height="wrap_content"
-            android:src="@mipmap/dayu3"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="44px"
-            android:id="@+id/imageView8" />
-
-
+            android:src="@mipmap/dayu3" />
 
 
     </RelativeLayout>
 
-<View
+    <View
     android:layout_width="match_parent"
     android:layout_height="2px"
     android:background="#EDEDED"
@@ -99,6 +103,7 @@
         android:layout_height="134px">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/phone"

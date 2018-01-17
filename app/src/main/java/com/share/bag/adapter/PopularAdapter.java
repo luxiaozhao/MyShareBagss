@@ -34,7 +34,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(PopularAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(PopularAdapter.ViewHolder holder, final int position) {
 //        holder.recyler_commodity.setImageResource(list.get(position).getImg());
         Glide.with(context).load(SBUrls.LOGURL+list.get(position).getImg()).into(holder.recyler_commodity);
 
@@ -51,28 +51,35 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         holder.recyler_commodity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onitemlistener.onClick(view);
+                onitemlistener.Back(view,position);
             }
         });
-        if (onClickedListener != null) {
+       // int positions;
+//        if (onClickedListener != null) {
             holder.recyler_Collection.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onClickedListener.onClick(view);
+                    callback.callBack(view, position);
                 }
             });
-        }
+//        }
     }
-    private View.OnClickListener onClickedListener;
-    private  View.OnClickListener onitemlistener;
-
-    public void setOnClickedListener(View.OnClickListener onClickedListener) {
-        this.onClickedListener = onClickedListener;
-
+    public interface AdapterCallback {
+        public void callBack(View v, int position);
     }
-    public void setOnitemClickedListener(View.OnClickListener Listener) {
+    private AdapterCallback callback;
+
+    /**通过该方法连接起来**/
+    public void setCallback(AdapterCallback callback) {
+        this.callback = callback;
+    }
+    private  OnitemClickedListener onitemlistener;
+    public void setOnitemClickedListener(OnitemClickedListener Listener) {
         this.onitemlistener = Listener;
 
+    }
+    public interface OnitemClickedListener {
+        public void Back(View v, int position);
     }
     @Override
     public int getItemCount() {

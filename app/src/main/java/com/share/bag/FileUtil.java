@@ -44,6 +44,9 @@ public  class FileUtil {
      * @param tname
      * @param tpass
      */
+    /*
+    * 模版
+    * */
     public static void readFromPre(Context context, EditText tname, EditText tpass) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
         String name = sharedPreferences.getString("name","");
@@ -64,15 +67,26 @@ public  class FileUtil {
         Glide.with(context).load("http://baobaoapi.ldlchat.com/"+imageurl).into(touxiangurl);
     }
 
+//                                                 昵称    头像  手机号
+    public static void Homepage(Context context, TextView nickname, ImageView touxiangurl, TextView name1) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
 
+        String nickname1 = sharedPreferences.getString("nickname", "");
+        String imageurl = sharedPreferences.getString("imageurl", "");
+        String name = sharedPreferences.getString("name", "");
+        nickname.setText(nickname1);
+        Glide.with(context).load("http://baobaoapi.ldlchat.com/"+imageurl).into(touxiangurl);
+        name1.setText(name);
+    }
+    /*
+    * 选包收藏
+    * */
     public static void SelectedreadFromPre(Context context, TextView tname) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
         String name = sharedPreferences.getString("name","");
         tname.setText(name);
 
     }
-
-
 /*
 * 清空sp内容
 * */

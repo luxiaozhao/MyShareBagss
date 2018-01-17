@@ -24,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.base.BaseActivity;
@@ -36,10 +37,8 @@ import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /*
@@ -48,26 +47,32 @@ import de.hdodenhof.circleimageview.CircleImageView;
 *
 * */
 public class PersonalActivity extends BaseActivity {
-    @BindView(R.id.personal_return)
-    ImageView personalReturn;
-    @BindView(R.id.personal_avatar)
-    RelativeLayout personalAvatar;
-    @BindView(R.id.personal_phone)
-    RelativeLayout personalPhone;
-    @BindView(R.id.personal_nickname)
-    RelativeLayout personalNickname;
-    @BindView(R.id.personal_signature)
-    RelativeLayout personalSignature;
-    @BindView(R.id.personal_avatar1)
-    CircleImageView personal_avatar1;
-    @BindView(R.id.personal_name1)
-    TextView personalName1;
-    @BindView(R.id.personal_number)
-    TextView personalNumber;
+//    @BindView(R.id.personal_return)
+//    ImageView personalReturn;
+//    @BindView(R.id.personal_avatar)
+//    RelativeLayout personalAvatar;
+//    @BindView(R.id.personal_phone)
+//    RelativeLayout personalPhone;
+//    @BindView(R.id.personal_nickname)
+//    RelativeLayout personalNickname;
+//    @BindView(R.id.personal_signature)
+//    RelativeLayout personalSignature;
+//    @BindView(R.id.personal_avatar1)
+//    CircleImageView personal_avatar1;
+//    @BindView(R.id.personal_name1)
+//    TextView personalName1;
+//    @BindView(R.id.personal_number)
+//    TextView personalNumber;
+//
+//    @BindView(R.id.imgurl)
+//    TextView imgurl;
 
-    @BindView(R.id.imgurl)
-    TextView imgurl;
 
+//    @BindView(R.id.personal_number)
+//    TextView personal_number;
+
+    //    @BindView(R.id.personal_name1)
+//    TextView personal_name1;
     private int width;
     private int height;
     private PopupWindow window1;
@@ -81,6 +86,21 @@ public class PersonalActivity extends BaseActivity {
     private File fileCropUri = new File(Environment.getExternalStorageDirectory().getPath() + "/crop_photo.jpg");
     private Uri imageUri;
     private Uri cropImageUri;
+    private ImageView personal_return;
+    private ImageView imageView8;
+    private RelativeLayout personal_avatar;
+    private TextView personal_number;
+    private ImageView imageView9;
+    private RelativeLayout personal_phone;
+    private TextView personal_name1;
+    private ImageView imageView11;
+    private RelativeLayout personal_nickname;
+    private TextView textView17;
+    private TextView textView15;
+    private TextView textView16;
+    private ImageView imageView12;
+    private RelativeLayout personal_signature;
+    private ImageView imgview;
 
 
     @Override
@@ -90,20 +110,57 @@ public class PersonalActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        Toast.makeText(this, "222222222222", Toast.LENGTH_SHORT).show();
+//        Log.e("TAG","-----------");
+//        FileUtil.MinereadFromPre(this,personalName1,personal_avatar1);
+//        String s = personalName1.getText().toString();
+//        Toast.makeText(this, "---------"+s, Toast.LENGTH_SHORT).show();
+//        Log.e("TAG","-----------");
 
+        personal_return = (ImageView) findViewById(R.id.personal_return);
+        imgview = (ImageView) findViewById(R.id.personal_avatar1);
+        imageView8 = (ImageView) findViewById(R.id.imageView8);
 
+        personal_avatar = (RelativeLayout) findViewById(R.id.personal_avatar);
 
+        personal_number = (TextView) findViewById(R.id.personal_number);
+
+        imageView9 = (ImageView) findViewById(R.id.imageView9);
+
+        personal_phone = (RelativeLayout) findViewById(R.id.personal_phone);
+
+        personal_name1 = (TextView) findViewById(R.id.personal_name1);
+        String s = personal_name1.getText().toString();
+        Toast.makeText(this, "3333333333333333", Toast.LENGTH_SHORT).show();
+        imageView11 = (ImageView) findViewById(R.id.imageView11);
+
+        personal_nickname = (RelativeLayout) findViewById(R.id.personal_nickname);
+
+        textView17 = (TextView) findViewById(R.id.textView17);
+
+        textView15 = (TextView) findViewById(R.id.textView15);
+
+        textView16 = (TextView) findViewById(R.id.textView16);
+
+        imageView12 = (ImageView) findViewById(R.id.imageView12);
+
+        personal_signature = (RelativeLayout) findViewById(R.id.personal_signature);
+        Toast.makeText(this,personal_name1.getText().toString()+personal_number.getText().toString(), Toast.LENGTH_SHORT).show();
+        FileUtil.Homepage(this,personal_name1,imgview,personal_number);
     }
 
     @Override
     protected void initData() {
-        //手机号  昵称  图片
-//        FileUtil.readFromPre1(this, personalName1,personalNumber,imgurl );//读取保存的数据
-////        personal_avatar1
-//        String s = imgurl.getText().toString();
-//        Toast.makeText(this, "http://baobaoapi.ldlchat.com"+s, Toast.LENGTH_SHORT).show();
-//        Log.e("TAG","-----"+"http://baobaoapi.ldlchat.com"+s);
-//        Glide.with(this).load("http://baobaoapi.ldlchat.com"+s).into(personal_avatar1);
+//        昵称    头像  手机号
+
+//            FileUtil.Homepage(this,personalName1,personal_avatar1,personalNumber);
+//        Toast.makeText(this, "1111111111111", Toast.LENGTH_SHORT).show();
+//        Log.e("TAG","=====");
+//            FileUtil.MinereadFromPre(this,personalName1,personal_avatar1);
+
+//        String s = personalName1.getText().toString();
+//        Toast.makeText(this, "---------", Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -228,7 +285,9 @@ public class PersonalActivity extends BaseActivity {
 
     //    展示图片 进行网络请求
     private void showImages(Bitmap bitmap) {
-        personal_avatar1.setImageBitmap(bitmap);
+        //personal_avatar1.setImageBitmap(bitmap);
+
+
 //        String url, Map<String, String> params, final ByteCallBack callback) {
 //      压缩图片
         ByteArrayOutputStream onputStream = new ByteArrayOutputStream();
