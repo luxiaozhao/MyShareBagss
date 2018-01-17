@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.share.bag.Constant;
+import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.base.BaseFragment;
 import com.share.bag.ui.activitys.mine.LoginActivity;
@@ -118,8 +119,11 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void initData() {
 
-//        FileUtil.readFromPre2(getActivity(),mine_name);
-        s = mine_name.getText().toString();
+        FileUtil.MinereadFromPre(getActivity(),mine_name,mineAvatar);
+        if (mine_name.getText().equals("")){
+            Glide.with(getContext()).load(R.mipmap.ic_launcher).into(mineAvatar);
+            mine_name.setText("请登录");
+        }
 
     }
 
@@ -163,29 +167,14 @@ public class MineFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case mine_data://我的主页
-
-                if (  s.equals("请登录")){
-                    Toast.makeText(getActivity(), "登录成功"+s, Toast.LENGTH_SHORT).show();
+                s = mine_name.getText().toString();
+                if (s.toString().equals("请登录")){//登录
                     loginintent = new Intent(getActivity(), LoginActivity.class);
                     startActivityForResult(loginintent,0);
-                }else {
+                }else {//个人中心
                     loginintent=new Intent(getActivity(), PersonalActivity.class);
                     startActivity(loginintent);
-                    Toast.makeText(getActivity(), "失败"+s, Toast.LENGTH_SHORT).show();
                 }
-
-
-//                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-//                    //登录
-//                    loginintent = new Intent(getActivity(), LoginActivity.class);
-//                    startActivityForResult(loginintent,0);
-//
-//                }else{
-////          //个人中心
-//                    loginintent=new Intent(getActivity(), PersonalActivity.class);
-//                    startActivity(loginintent);
-//
-//                }
 
                 break;
             case mine_cabinets://我的包柜
@@ -245,7 +234,8 @@ public class MineFragment extends BaseFragment {
                 Toast.makeText(getActivity(), "点击了商务合作", Toast.LENGTH_SHORT).show();
 
 
-                SharePreUtils.clear();
+//                SharePreUtils.clear();        shanchu
+                FileUtil.shanchu(getActivity());
                 Glide.with(getContext()).load(R.mipmap.ic_launcher).into(mineAvatar);
                  mine_name.setText("请登录");
 

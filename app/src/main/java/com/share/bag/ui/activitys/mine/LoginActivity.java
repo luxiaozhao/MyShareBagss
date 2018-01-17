@@ -20,7 +20,6 @@ import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.utils.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -120,28 +119,27 @@ public class LoginActivity extends BaseActivity {
                 String info = loginBean.getStatus();
 
                 if (info.equals("1")){
-                    Toast.makeText(LoginActivity.this, "登录成功"+loginBean.getMsg().getUsername(), Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(LoginActivity.this, MineFragment.class));
-                    Toast.makeText(LoginActivity.this, "返回值是："+loginBean.getMsg().getId()
-                            +"用户名"+loginBean.getMsg().getUsername()
-                            +"密码"+loginBean.getMsg().getPassword()
-                            +"性别"+loginBean.getMsg().getGender()
-                                    +"图片"+loginBean.getMsg().getIconurl()
-                                    +"昵称"+loginBean.getMsg().getName() ,
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, "返回值是："+loginBean.getMsg().getId()
+//                            +"用户名"+loginBean.getMsg().getUsername()
+//                            +"密码"+loginBean.getMsg().getPassword()
+//                            +"性别"+loginBean.getMsg().getGender()
+//                                    +"图片"+loginBean.getMsg().getIconurl()
+//                                    +"昵称"+loginBean.getMsg().getName() ,
+//                            Toast.LENGTH_SHORT).show();
 
-                    Log.e("TAG-----","返回值是："+loginBean.getMsg().getId()
-                            +"用户名"+loginBean.getMsg().getUsername()
-                            +"密码"+loginBean.getMsg().getPassword()
-                            +"性别"+loginBean.getMsg().getGender()
-                            +"图片"+loginBean.getMsg().getIconurl()
-                            +"昵称"+loginBean.getMsg().getName());
+//                    Log.e("TAG-----","返回值是："+loginBean.getMsg().getId()
+//                            +"用户名"+loginBean.getMsg().getUsername()
+//                            +"密码"+loginBean.getMsg().getPassword()
+//                            +"性别"+loginBean.getMsg().getGender()
+//                            +"图片"+loginBean.getMsg().getIconurl()
+//                            +"昵称"+loginBean.getMsg().getName());
                     String username = loginBean.getMsg().getUsername();//用户名
                     String password = loginBean.getMsg().getPassword();
                     String gender = (String) loginBean.getMsg().getGender();
                     String id = loginBean.getMsg().getId();
                     String nickname = (String) loginBean.getMsg().getName();//昵称
                     String iconurl = (String) loginBean.getMsg().getIconurl();
+
                     FileUtil.saveToPre1(LoginActivity.this, username, password,id,gender,nickname,iconurl);
 
 //返回值是：39用户名17801190741密码25f9e794323b453885f5181f1b624d0b性别男图片/Uploads/20180115/5a5c759804236.png昵称5

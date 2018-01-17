@@ -4,151 +4,17 @@ package com.share.bag;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Environment;
-import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import com.bumptech.glide.Glide;
 
 /**
  * Created by Administrator on 2018/1/16.
  */
 
 public  class FileUtil {
-
-
-    /**
-     * 第一种方法：
-     * 将输入的用户名和密码保存在这个应用的某个文件中
-     * @param context Activity的上面的某一层是Context,所以传值过来的是一个Activity,此处可以写成Context
-     * @param name 输入的用户名
-     * @param pass 输入的密码
-     */
-    public static void saveToFile(Context context, String name, String pass) {
-        File dir = context.getFilesDir(); //查找这个应用下的所有文件所在的目录
-        FileWriter writer;
-        try {
-            writer = new FileWriter(dir.getAbsolutePath() + "/userinfo.txt");
-            writer.append(name + "," + pass);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * 从这个应用下的文件中读取保存的用户名和密码,再次登录时自动显示在输入框中
-     * @param context
-     * @param tname
-     * @param tpass
-     */
-    public static void readFromFile(Context context, EditText tname, EditText tpass) {
-        File dir = context.getFilesDir();//目录为：/data/data/com.etc.login/files
-        FileReader reader;
-        try {
-            reader = new FileReader(dir.getAbsolutePath() + "/userinfo.txt");
-            BufferedReader breader = new BufferedReader(reader);
-            String line = breader.readLine();
-            String strs[] = line.split(",");
-            tname.setText(strs[0]);
-            tpass.setText(strs[1]);
-            breader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * 第二种方法：
-     * 将输入的用户名和密码保存到sdcard中
-     * @param context
-     * @param name
-     * @param pass
-     */
-    public static void savtToSDCard(Context context, String name, String pass) {
-        File sdcardDir = Environment.getExternalStorageDirectory();
-        Log.d("mytag",sdcardDir.toString());//目录为：/storage/emulated/0
-        /**
-         * 但是使用cmd工具查找文件时，不再这个目录下，而是在/mnt/sdcard目录下
-         *
-         */
-        FileWriter writer;
-        try {
-            writer = new FileWriter(sdcardDir.getAbsolutePath() + "/userinfo.txt");
-            writer.append(name + "," + pass);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    /**
-     * 从sdcard中读取保存的用户名和密码
-     * @param context
-     * @param tname
-     * @param tpass
-     */
-    public static void readFromSDCard(Context context, EditText tname, EditText tpass) {
-        File sdcardDir = Environment.getExternalStorageDirectory();
-        FileReader reader;
-        try {
-            reader = new FileReader(sdcardDir.getAbsolutePath() + "/userinfo.txt");
-            BufferedReader breader = new BufferedReader(reader);
-            String line = breader.readLine();
-            String strs[] = line.split(",");
-            tname.setText(strs[0]);
-            tpass.setText(strs[1]);
-            breader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    /**
-     * 第三种方法：
-     * 使用文件api进行保存用户名和密码，不必得到对应的目录
-     * @param context
-     * @param name
-     * @param pass
-     */
-    public static void saveToFile2(Context context, String name, String pass) {
-        try {
-            FileOutputStream out = context.openFileOutput("userinfo2.txt",context.MODE_PRIVATE);
-            OutputStreamWriter writer = new OutputStreamWriter(out);
-            writer.append(name+","+pass);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    /**
-     * 使用文件api进行读取保存的用户名和密码
-     * @param context
-     * @param tname
-     * @param tpass
-     */
-    public static void readFromFile2(Context context, EditText tname, EditText tpass) {
-        try {
-            FileInputStream in = context.openFileInput("userinfo2.txt");
-            InputStreamReader reader = new InputStreamReader(in);
-            BufferedReader breader = new BufferedReader(reader);
-            String line = breader.readLine();
-            String strs[] = line.split(",");
-            tname.setText(strs[0]);
-            tpass.setText(strs[1]);
-            breader.close();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
     /**
      * 最为通用的第四种方法：
      * 使用SharedPreference进行保存用户名和密码，可以实现拆分，不必手动的以，为分隔符进行拆分，
@@ -158,23 +24,17 @@ public  class FileUtil {
      * @param name
      * @param pass
      */
-    public static void saveToPre(Context context, String name, String pass) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("name",name);
-        editor.putString("pass",pass);
-        editor.commit();
-    }
+
 
     public static void saveToPre1(Context context, String name, String pass,String id,String gender,String nickname,String imageurl) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("name",name);
-        editor.putString("pass",pass);
-        editor.putString("id",id);
-        editor.putString("gender",gender);
-        editor.putString("nickname",nickname);
-        editor.putString("imageurl",imageurl);
+        editor.putString("name",name);//手机号
+        editor.putString("pass",pass);//密码
+        editor.putString("id",id);//
+        editor.putString("gender",gender);//性别
+        editor.putString("nickname",nickname);//昵称
+        editor.putString("imageurl",imageurl);//图片
         editor.commit();
     }
 
@@ -191,31 +51,56 @@ public  class FileUtil {
         tname.setText(name);
         tpass.setText(pass);
     }
-    public static void readFromPre1(Context context, TextView name1, TextView pass1, TextView id, TextView gender, TextView nickname, TextView imageurl) {
+    public static void readFromPre1(Context context, TextView name1, TextView nickname, TextView imageurl) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
         String name = sharedPreferences.getString("name", "");
-        String pass = sharedPreferences.getString("pass", "");
-        String id1 = sharedPreferences.getString("id", "");
-        String gender1 = sharedPreferences.getString("gender", "");
+//        String pass = sharedPreferences.getString("pass", "");
+//        String id1 = sharedPreferences.getString("id", "");
+//        String gender1 = sharedPreferences.getString("gender", "");
         String nickname1 = sharedPreferences.getString("nickname", "");
         String imageurl1 = sharedPreferences.getString("imageurl", "");
 
         name1.setText(name);
-        pass1.setText(pass);
-        id.setText(id1);
-        gender.setText(gender1);
+//        pass1.setText(pass);
+//        id.setText(id1);
+//        gender.setText(gender1);
         nickname.setText(nickname1);
         imageurl.setText(imageurl1);
+
     }
 
-
-    public static void readFromPre2(Context context,  TextView nickname) {
+/*
+* 我的主页的sp
+* */
+    public static void MinereadFromPre(Context context,  TextView nickname,ImageView touxiangurl) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
 
         String nickname1 = sharedPreferences.getString("nickname", "");
+        String imageurl = sharedPreferences.getString("imageurl", "");
+
+
         nickname.setText(nickname1);
+        Glide.with(context).load("http://baobaoapi.ldlchat.com/"+imageurl).into(touxiangurl);
+    }///baobaoapi.ldlchat.com/Uploads/20180115/5a5c759804236.png
+    public static void readFromPre3(Context context,  String nickname) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+
+        String nickname1 = sharedPreferences.getString("nickname", "");
+        nickname = nickname1;
 
     }
+
+
+
+
+
+
+    public static void shanchu(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinfo",context.MODE_PRIVATE);
+
+        sharedPreferences.edit().clear().commit();
+    }
+
 }
 
 

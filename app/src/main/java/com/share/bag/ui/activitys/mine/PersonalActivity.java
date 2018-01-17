@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.share.bag.R;
@@ -59,6 +60,14 @@ public class PersonalActivity extends BaseActivity {
     RelativeLayout personalSignature;
     @BindView(R.id.personal_avatar1)
     CircleImageView personal_avatar1;
+    @BindView(R.id.personal_name1)
+    TextView personalName1;
+    @BindView(R.id.personal_number)
+    TextView personalNumber;
+
+    @BindView(R.id.imgurl)
+    TextView imgurl;
+
     private int width;
     private int height;
     private PopupWindow window1;
@@ -74,7 +83,6 @@ public class PersonalActivity extends BaseActivity {
     private Uri cropImageUri;
 
 
-
     @Override
     public int initLayout() {
         return R.layout.activity_personal2;
@@ -83,10 +91,19 @@ public class PersonalActivity extends BaseActivity {
     @Override
     public void initView() {
 
+
+
     }
 
     @Override
     protected void initData() {
+        //手机号  昵称  图片
+//        FileUtil.readFromPre1(this, personalName1,personalNumber,imgurl );//读取保存的数据
+////        personal_avatar1
+//        String s = imgurl.getText().toString();
+//        Toast.makeText(this, "http://baobaoapi.ldlchat.com"+s, Toast.LENGTH_SHORT).show();
+//        Log.e("TAG","-----"+"http://baobaoapi.ldlchat.com"+s);
+//        Glide.with(this).load("http://baobaoapi.ldlchat.com"+s).into(personal_avatar1);
 
     }
 
@@ -99,6 +116,8 @@ public class PersonalActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
+
+//
         ButterKnife.bind(this);
     }
 
@@ -115,11 +134,11 @@ public class PersonalActivity extends BaseActivity {
                 break;
             case R.id.personal_phone://手机号
 
-                startActivity(new Intent(PersonalActivity.this,PhoneActivity.class));
+                startActivity(new Intent(PersonalActivity.this, PhoneActivity.class));
 
                 break;
             case R.id.personal_nickname://昵称
-                Log.e("TAG======","点击了4");
+                Log.e("TAG======", "点击了4");
                 Toast.makeText(this, "444444444", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.personal_signature://个性签名
@@ -129,7 +148,7 @@ public class PersonalActivity extends BaseActivity {
     }
 
     public void getPopupWindow() {
-        WindowManager wm = (WindowManager)getApplication()
+        WindowManager wm = (WindowManager) getApplication()
                 .getSystemService(Context.WINDOW_SERVICE);
 
         int width = wm.getDefaultDisplay().getWidth();
@@ -141,8 +160,8 @@ public class PersonalActivity extends BaseActivity {
                 width, height);
         window1.setContentView(contentView);
         //设置各个控件的点击响应
-        LinearLayout popupwindow_avatar_shoot = (LinearLayout)contentView.findViewById(R.id.popupwindow_avatar_shoot);
-        LinearLayout popupwindow_avatar_album = (LinearLayout)contentView.findViewById(R.id.popupwindow_avatar_album);
+        LinearLayout popupwindow_avatar_shoot = (LinearLayout) contentView.findViewById(R.id.popupwindow_avatar_shoot);
+        LinearLayout popupwindow_avatar_album = (LinearLayout) contentView.findViewById(R.id.popupwindow_avatar_album);
 
         //显示PopupWindow
         View rootview = LayoutInflater.from(this).inflate(R.layout.activity_personal2, null);
@@ -163,7 +182,6 @@ public class PersonalActivity extends BaseActivity {
                 window1.dismiss();
 
 
-
 //                finish();
             }
         });
@@ -172,6 +190,7 @@ public class PersonalActivity extends BaseActivity {
 
     private static final int OUTPUT_X = 480;
     private static final int OUTPUT_Y = 480;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -206,13 +225,14 @@ public class PersonalActivity extends BaseActivity {
             }
         }
     }
-//    展示图片 进行网络请求
+
+    //    展示图片 进行网络请求
     private void showImages(Bitmap bitmap) {
         personal_avatar1.setImageBitmap(bitmap);
 //        String url, Map<String, String> params, final ByteCallBack callback) {
 //      压缩图片
         ByteArrayOutputStream onputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,onputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, onputStream);
         final byte[] bytes = onputStream.toByteArray();
 
 
@@ -240,20 +260,21 @@ public class PersonalActivity extends BaseActivity {
             @Override
             public void onSuccess(HeadImgBean headImgBean) {
 
-                com.share.bag.utils.ToastUtils.show(PersonalActivity.this ,bytes.toString() +""+headImgBean.getInfo()+"-----"+headImgBean.getStatus());
+                com.share.bag.utils.ToastUtils.show(PersonalActivity.this, bytes.toString() + "" + headImgBean.getInfo() + "-----" + headImgBean.getStatus());
 
-                Log.e("TAG",bytes.toString() +""+headImgBean.getInfo()+"-----"+headImgBean.getStatus());
+                Log.e("TAG", bytes.toString() + "" + headImgBean.getInfo() + "-----" + headImgBean.getStatus());
 
 
             }
 
             @Override
             public void onError(int errorCode, String errorMsg) {
-                com.share.bag.utils.ToastUtils.show(PersonalActivity.this , "失败" + errorMsg);
+                com.share.bag.utils.ToastUtils.show(PersonalActivity.this, "失败" + errorMsg);
             }
         });
 
     }
+
     private void autoObtainCameraPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSIONS_REQUEST_CODE);

@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.adapter.PopularAdapter;
@@ -86,6 +87,10 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
+       String nicheng="";
+
+        FileUtil.readFromPre3(getActivity(),nicheng);
+        Toast.makeText(getActivity(), "-----------"+nicheng, Toast.LENGTH_SHORT).show();
 //     设置  Manager
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
         selectedRecyclerview.setLayoutManager(manager);
@@ -97,6 +102,11 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "收藏成功", Toast.LENGTH_SHORT).show();
+
+
+
+
+
 //
 //                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
 //
