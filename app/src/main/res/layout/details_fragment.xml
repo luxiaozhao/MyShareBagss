@@ -5,61 +5,91 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50px"
-        android:text="菲安妮（fion）欧美时尚印花PVC托特包 女士大容量单肩手提拉链女士包包/FPLL/PBRCM/AT017/咖啡色"
-        android:textColor="#838383"
-        android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54px"
+            android:text="爱马仕女士公文包上班首选2018新款白领必备"
+            android:textColor="#FF303030"
+            android:textSize="42px"
+            android:layout_marginLeft="74px"/>
+
+
+        <TextView
+            android:layout_marginLeft="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34px"
+            android:text="品牌：爱马仕"
+            android:textColor="#838383"
+            android:textSize="36px" />
+
+        <TextView
+            android:layout_marginLeft="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:text="商品编号：201801181256"
+            android:textColor="#838383"
+            android:textSize="36px"  />
+
+        <TextView
+            android:layout_marginLeft="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:text="颜色：粉色"
+            android:textColor="#838383"
+            android:textSize="36px"  />
+
+        <TextView
+            android:layout_marginLeft="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:text="材质：真牛品"
+            android:textColor="#838383"
+            android:textSize="36px" />
+
+        <TextView
+            android:layout_marginLeft="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:text="尺寸：420*255*155mm"
+            android:textColor="#838383"
+            android:textSize="36px"  />
+
+    <View
+        android:layout_marginTop="48px"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#F1F1F1"/>
 
 
     <TextView
+        android:layout_marginLeft="74px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40px"
-        android:text="产品参数：INFORMATION"
-        android:textColor="#838383"
-        android:textSize="14sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="颜色：粉色/红色/黑色"
-        android:textColor="#838383"
-        android:textSize="14sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="材质：真牛皮"
-        android:textColor="#838383"
-        android:textSize="14sp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="尺寸：420*255*155mm"
-        android:textColor="#838383"
-        android:textSize="14sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40px"
+        android:layout_marginTop="74px"
         android:text="内容描述"
         android:textColor="#838383"
         android:textSize="14sp" />
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/mo1" />
+        android:layout_gravity="center"
+        android:layout_width="960px"
+        android:layout_height="960px"
+        android:src="@drawable/mo1"
+        android:scaleType="fitXY"/>
 
 
     <TextView
+        android:layout_marginLeft="74px"
+        android:layout_marginTop="74px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="cant/侧面"
@@ -68,10 +98,11 @@
 
 
     <ImageView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/mo1" />
+        android:layout_gravity="center"
+        android:layout_width="960px"
+        android:layout_height="960px"
+        android:src="@drawable/mo1"
+        android:scaleType="fitXY"/>
 
 
 </LinearLayout>

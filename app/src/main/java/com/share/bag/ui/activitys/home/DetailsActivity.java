@@ -10,21 +10,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.share.bag.Constant;
+import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.SBUrls;
 import com.share.bag.adapter.CosTomPageAdapter;
 import com.share.bag.base.BaseActivity;
+import com.share.bag.entity.CollectionBean;
 import com.share.bag.entity.DeailsBean;
 import com.share.bag.ui.activitys.mine.LoginActivity;
 import com.share.bag.ui.fragments.page.CommentsFragment;
 import com.share.bag.ui.fragments.page.DetalisFragment;
 import com.share.bag.ui.pay.BuyActivity;
 import com.share.bag.ui.pay.RentActivity;
-import com.share.bag.utils.SharePreUtils;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.youth.banner.Banner;
@@ -60,6 +61,8 @@ public class DetailsActivity extends BaseActivity {
     Button detailsButtonRent;
     @BindView(R.id.details_button_buy)
     Button detailsButtonBuy;
+    @BindView(R.id.details__user)
+    TextView details__user;
 
     private String tmp;
     //             Banner   List
@@ -91,10 +94,12 @@ public class DetailsActivity extends BaseActivity {
         tmp = intent.getStringExtra("details");
         Log.e("sss", "initView: " + tmp);
         fragmentManager = getSupportFragmentManager();
+
     }
 
     @Override
     protected void initData() {
+
         Map<String, String> map = new HashMap<>();
         map.put("id", tmp);
         //请求网络
@@ -170,47 +175,70 @@ public class DetailsActivity extends BaseActivity {
 
     @OnClick({R.id.details_button_collection, R.id.details_button_rent, R.id.details_button_buy})
     public void onViewClicked(View view) {
+        FileUtil.SelectedreadFromPre(DetailsActivity.this,details__user);
         switch (view.getId()) {
             case R.id.details_button_collection:
-
-                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-//                    登录
-                    Intent loginintent = new Intent(DetailsActivity.this, LoginActivity.class);
-                    startActivity(loginintent);
-                }else{
-                    Toast.makeText(DetailsActivity.this, "收藏成功", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
+                if (details__user.getText().equals("")){
+                    Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+                }else {
+                    getselect();
                 }
-
-                Toast.makeText(this, "收藏成功", Toast.LENGTH_SHORT).show();
-
                 break;
-            case R.id.details_button_rent:
-
-                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-//                    登录
-                    Intent detailsloginintent = new Intent(DetailsActivity.this, LoginActivity.class);
-                    startActivity(detailsloginintent);
-                }else{
-//                    确认租下
+            case R.id.details_button_rent://租下
+                if (details__user.getText().equals("")){
+//                    Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(DetailsActivity.this,LoginActivity.class);
+                    startActivity(intent);
+                }else {
                     Intent rentloginintent = new Intent(DetailsActivity.this, RentActivity.class);
+                    startActivity(rentloginintent);
+                }
+                break;
+            case R.id.details_button_buy://买下
+
+                if (details__user.getText().equals("")){
+//                    Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(DetailsActivity.this,LoginActivity.class);
+                    startActivity(intent);
+
+
+                }else {
+
+                    Intent rentloginintent = new Intent(DetailsActivity.this, BuyActivity.class);
                     startActivity(rentloginintent);
                 }
 
                 break;
-            case R.id.details_button_buy:
-                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-//                    登录
-                    Intent loginintent = new Intent(DetailsActivity.this, LoginActivity.class);
-                    startActivity(loginintent);
-                }else{
-//                    确认租下
-                    Intent buyloginintent = new Intent(DetailsActivity.this, BuyActivity.class);
-                    startActivity(buyloginintent);
+        }
+    }
+
+    //点击收藏
+    public void getselect() {
+
+        Map<String ,String> collection=new HashMap();
+        collection.put("baglist_id","1");
+        OkHttpUtils.getInstance().post(SBUrls.COLLECTION, collection, new MyNetWorkCallback<CollectionBean>() {
+            @Override
+            public void onSuccess(CollectionBean collectionBean) {
+                String status = collectionBean.getInfo();
+                if (status.toString().equals("收藏成功")){
+
+                    Toast.makeText(DetailsActivity.this, ""+status, Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(DetailsActivity.this, ""+status, Toast.LENGTH_SHORT).show();
                 }
 
 
-                break;
-        }
+            }
+
+            @Override
+            public void onError(int errorCode, String errorMsg) {
+
+            }
+        });
+
     }
 
 

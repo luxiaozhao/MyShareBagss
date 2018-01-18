@@ -100,6 +100,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             recyler_name = (TextView) itemView.findViewById(R.id.recyler_name);
             recyler_price = (TextView) itemView.findViewById(R.id.recyler_price);
             recyler_money = (TextView) itemView.findViewById(R.id.recyler_money);
+
         }
     }
 

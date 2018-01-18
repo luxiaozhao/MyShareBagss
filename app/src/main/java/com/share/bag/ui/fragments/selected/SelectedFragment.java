@@ -1,6 +1,7 @@
 package com.share.bag.ui.fragments.selected;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -26,6 +27,7 @@ import com.share.bag.adapter.PopularAdapter;
 import com.share.bag.base.BaseFragment;
 import com.share.bag.entity.CollectionBean;
 import com.share.bag.entity.selected.SelectedBean;
+import com.share.bag.ui.activitys.home.DetailsActivity;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.ByteCallBack;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
@@ -78,6 +80,7 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
     private List<SelectedBean> mList=new ArrayList();
     private List<SelectedBean> mLists=new ArrayList();
     private PopupWindow window1;
+    private View convertView;
 
     @Override
     public int initLayout() {
@@ -91,12 +94,7 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-
-
         FileUtil.SelectedreadFromPre(getActivity(),select_user);
-//        Toast.makeText(getActivity(), "-----------"+select_user.getText().toString(), Toast.LENGTH_SHORT).show();
-//
-        
         if (select_user.getText().equals("")){
             Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
         }else {
@@ -108,45 +106,36 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
         selectedRecyclerview.setLayoutManager(manager);
 //        初始化 界面
+
         adapter = new PopularAdapter(getContext(), mList);
 //        RecyclerAdapterWithHF recyclerAdapterWithHF = new RecyclerAdapterWithHF(adapter);
         selectedRecyclerview.setAdapter(adapter);
         adapter.setOnitemClickedListener(new PopularAdapter.OnitemClickedListener() {
             @Override
-            public void Back(View v, int position) {
-                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+            public void Back(View v, int position) {//详情页
+
+                    Intent intent1 = new Intent(getActivity(), DetailsActivity.class);
+                    intent1.putExtra("details",position+"");
+
+                    intent1.putExtra("details",mList.get(position).getId());
+
+                    startActivity(intent1);
+
+
+
             }
         });
-        adapter.setCallback(new PopularAdapter.AdapterCallback() {
+        adapter.setCallback(new PopularAdapter.AdapterCallback() {//收藏调用
             @Override
             public void callBack(View v, int position) {
-                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
-//                if (select_user.getText().equals("")){
-//                    Toast.makeText(getActivity(), "请先登录"+position, Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(getActivity(), "登录成功"+position, Toast.LENGTH_SHORT).show();
-//
-//
-//                }
+                if (select_user.getText().equals("")){
+                    Toast.makeText(getActivity(), "请先登录"+position, Toast.LENGTH_SHORT).show();
+                }else {
+                    getselect();
+                }
             }
         });
 
-//        adapter.setOnClickedListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//            }
-//        });
-//            adapter.setOnitemClickedListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {//详情页
-//
-////                    Intent intent1 = new Intent(getActivity(), DetailsActivity.class);
-////
-////                    intent1.putExtra("details", ""+1);
-////                    startActivity(intent1);
-//
-//                }
-//            });
     }
     public void getselect() {
 
@@ -156,40 +145,28 @@ public class SelectedFragment extends BaseFragment implements View.OnClickListen
                         @Override
                         public void onSuccess(CollectionBean collectionBean) {
                             String status = collectionBean.getInfo();
-                            Toast.makeText(getActivity(), "----"+status, Toast.LENGTH_SHORT).show();
-                            getselect();
-//                            adapter.notifyDataSetChanged();// notifyDataSetChanged
+//                            Toast.makeText(getActivity(), "----"+status, Toast.LENGTH_SHORT).show();
+//                            getselect();
+                            if (status.toString().equals("收藏成功")){
+//                                convertView = LayoutInflater.from(getContext()).inflate(R.layout.recy_item1,null);
+//                                ImageView viewById = convertView.findViewById(R.id.recyler_Collection);
+//                                viewById.setImageResource(R.mipmap.ic_launcher);
+                                Toast.makeText(getContext(), "收藏成功"+status, Toast.LENGTH_SHORT).show();
+
+                            }else {
+                                Toast.makeText(getContext(), ""+status, Toast.LENGTH_SHORT).show();
+                            }
+
+
+                            adapter.notifyDataSetChanged();// 刷新
 
                         }
 
                         @Override
                         public void onError(int errorCode, String errorMsg) {
-                            Toast.makeText(getActivity(), "----"+errorMsg, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getActivity(), "----"+errorMsg, Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
-
-
-//                    OkHttpUtils.getInstance().post();
-//                    OkHttpUtils.getInstance().post(SBUrls.COLLECTION, collection, new MyNetWorkCallback<CollectionBean>() {
-//                        @Override
-//                        public void onSuccess(CollectionBean collectionBean) {
-//
-//                            String status = collectionBean.getStatus();
-//
-//                            Toast.makeText(getActivity(), "======"+status, Toast.LENGTH_SHORT).show();
-//
-//
-//                        }
-//
-//                        @Override
-//                        public void onError(int errorCode, String errorMsg) {
-//
-//                        }
-//                    }
-// );
-
 
     }
     @Override

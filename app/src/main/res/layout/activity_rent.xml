@@ -4,47 +4,589 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2F2F2"
     android:orientation="vertical"
     tools:context="com.share.bag.ui.pay.RentActivity">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="194px">
+        android:layout_height="128px"
+        android:background="#FFF">
 
         <ImageView
-            android:id="@+id/personal_return"
+            android:id="@+id/rent_return"
             android:layout_width="50px"
             android:layout_height="wrap_content"
-            android:src="@mipmap/xiaoyu3"
-            android:layout_marginStart="27dp"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
-
+            android:layout_marginStart="32px"
+            android:src="@mipmap/xiaoyu3" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_rent"
-            android:textSize="50px"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-
-
+            android:text="@string/confirm_rent"
+            android:textColor="#616267"
+            android:textSize="51px"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#D9D9D9" />
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rent_address"
+                android:layout_width="match_parent"
+                android:layout_height="208px"
+                android:background="#FFF">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36px"
+                    android:layout_marginStart="12dp"
+                    android:src="@mipmap/dingwei3" />
+
+
+                <TextView
+                    android:id="@+id/rent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="58px"
+                    android:layout_marginTop="42px"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:text="@string/nickname"
+                    android:textColor="#FF303030"
+                    android:textSize="42px" />
+
+
+                <TextView
+                    android:id="@+id/rent_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/rent"
+                    android:layout_alignBottom="@+id/rent"
+                    android:layout_marginStart="58px"
+                    android:layout_toEndOf="@+id/rent"
+                    android:text="12345678901"
+                    android:textColor="#FF303030"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/rent_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/rent"
+                    android:layout_below="@+id/rent"
+                    android:layout_marginTop="30px"
+                    android:text="北京市昌平南区回龙观镇珠江摩尔大厦"
+                    android:textColor="#FF838383"
+                    android:textSize="34px" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20px"
+                android:background="#F2F2F2" />
+            <!--android:scaleType="fitXY"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="430px"
+                android:background="#FFF">
+
+                <ImageView
+                    android:layout_width="464px"
+                    android:layout_height="360px"
+                    android:layout_marginLeft="38px"
+                    android:layout_marginTop="44px"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mo2" />
+
+                <LinearLayout
+                    android:paddingRight="36px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="68px"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="52px"
+                        android:text="爱马仕女士公文包上班首选2018新款白领必备"
+                        android:textColor="#FF303030"
+                        android:textSize="30px" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32px"
+                        android:text="品牌：爱马仕"
+                        android:textColor="#FF838383"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14px"
+                        android:text="商品编号：201801181256"
+                        android:textColor="#FF838383"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14px"
+                        android:text="颜色：粉色"
+                        android:textColor="#FF838383"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14px"
+                        android:text="材质：真牛品"
+                        android:textColor="#FF838383"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14px"
+                        android:text="尺寸：420*255*155mm"
+                        android:textColor="#FF838383"
+                        android:textSize="28px" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="760px"
+                android:background="#FFF"
+                android:orientation="vertical"
+                android:paddingLeft="36px"
+                android:paddingRight="36px">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42px"
+                    android:text="价格详情"
+                    android:textColor="#FF303030"
+                    android:textSize="54px" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="42px"
+                    android:background="#D9D9D9" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商品租金"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <TextView
+                        android:id="@+id/rent_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20元/天" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46px"
+                    android:gravity="center_vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="租用时间"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="300px"
+                        android:layout_height="100px"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/rent_time_less"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/textview_border"
+                            android:gravity="center"
+                            android:text="—"
+                            android:textColor="#000"/>
+
+                        <TextView
+                            android:id="@+id/rent_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/textview_border"
+                            android:gravity="center"
+                            android:text="8"
+                            android:textColor="#000"/>
+
+                        <TextView
+                            android:id="@+id/rent_time_plus"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/textview_border"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="#000"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="会员折扣"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <TextView
+                        android:id="@+id/rent_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-20元" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="运费(包邮)"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <TextView
+                        android:id="@+id/rent_postage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0元" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="可用红包"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <TextView
+                        android:id="@+id/rent_red_package"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-50元" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40px"
+                android:background="#F2F2F2" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="44px"
+                android:background="#F2F2F2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="426px"
+                android:background="#FFF"
+                android:orientation="vertical"
+                android:paddingLeft="36px"
+                android:paddingRight="36px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50px"
+                        android:layout_marginTop="50px"
+                        android:text="应付押金"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <TextView
+                        android:id="@+id/rent_handle_deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF838383"
+                        android:textSize="38px"
+                        android:layout_marginTop="50px"
+                        android:text="500"/>
+                    
+                    
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50px"
+                        android:text="已付押金"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+                    
+                    <TextView
+                        android:id="@+id/rent_paid_deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF838383"
+                        android:textSize="38px"
+                        android:layout_marginTop="50px"
+                        android:text="300"/>
+                    
+                    
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4px"
+                    android:background="#F2F2F2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50px"
+                        android:text="应付租金"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_weight="1" />
+                    
+                    <TextView
+                        android:id="@+id/rent_handle_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF838383"
+                        android:textSize="38px"
+                        android:layout_marginTop="50px"
+                        android:text="300"/>
+
+
+
+
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50px"
+                        android:layout_marginTop="50px"  
+                        android:text="补充押金"
+                        android:textColor="#FF838383"
+                        android:textSize="38px" />
+
+                  
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_weight="1" />
+                    
+                    <TextView
+                        android:id="@+id/rent_supplement_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF838383"
+                        android:textSize="38px"
+                        android:layout_marginTop="50px"
+                        android:text="300"/>
+
+
+
+
+                </LinearLayout>
+                
+                
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:background="#F2F2F2" />
+
+<LinearLayout
+    android:gravity="center_vertical"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="146px">
+
+
 <TextView
+    android:layout_marginLeft="36px"
+    android:gravity="center_vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="租的界面"/>
+    android:text="总价：￥"/>
+
+    <TextView
+        android:id="@+id/rent_total_amount"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="11111"/>
+
+
+  <LinearLayout
+      android:id="@+id/rent_submit_order"
+      android:gravity="center"
+      android:background="#FC655E"
+      android:layout_width="462px"
+      android:layout_height="match_parent">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="提交订单"
+          android:textSize="46px"
+          android:textStyle="bold"
+          android:textColor="#FFF"/>
+
+
+  </LinearLayout>
 
 
 
-
-
-
+</LinearLayout>
 
 </LinearLayout>
