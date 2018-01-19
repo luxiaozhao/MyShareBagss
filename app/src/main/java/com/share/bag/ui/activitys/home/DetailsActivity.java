@@ -7,9 +7,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +31,6 @@ import com.share.bag.ui.fragments.page.CommentsFragment;
 import com.share.bag.ui.fragments.page.DetalisFragment;
 import com.share.bag.ui.pay.BuyActivity;
 import com.share.bag.ui.pay.RentActivity;
-import com.share.bag.ui.share.ShareActivity;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.youth.banner.Banner;
@@ -63,6 +67,8 @@ public class DetailsActivity extends BaseActivity {
     @BindView(R.id.details__user)
     TextView details__user;
 
+    private PopupWindow window1;
+
     private String tmp;
     private List<String> heardimg = new ArrayList<>();
     int NUM = 0;
@@ -95,13 +101,16 @@ public class DetailsActivity extends BaseActivity {
         Details_shared.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (details__user.getText().equals("")) {
-                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent rentloginintent = new Intent(DetailsActivity.this, ShareActivity.class);
-                    startActivity(rentloginintent);
-                }
+
+                getPopupWindow();
+
+//                if (details__user.getText().equals("")) {
+//                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//                } else {
+//                    Intent rentloginintent = new Intent(DetailsActivity.this, ShareActivity.class);
+//                    startActivity(rentloginintent);
+//                }
             }
         });
     }
@@ -216,6 +225,109 @@ public class DetailsActivity extends BaseActivity {
                 break;
         }
     }
+
+    public void getPopupWindow() {
+        WindowManager wm = (WindowManager) getApplication()
+                .getSystemService(Context.WINDOW_SERVICE);
+
+        int width = wm.getDefaultDisplay().getWidth();
+        int height = wm.getDefaultDisplay().getHeight();
+
+        //设置contentView
+        View contentView = LayoutInflater.from(this).inflate(R.layout.popupwindow_share, null);
+        window1 = new PopupWindow(contentView,
+                width, height);
+        window1.setContentView(contentView);
+        //设置各个控件的点击响应
+        LinearLayout details_share_wxfriends = (LinearLayout) contentView.findViewById(R.id.details_share_wxfriends);
+        LinearLayout details_share_wxcircle = (LinearLayout) contentView.findViewById(R.id.details_share_wxcircle);
+        LinearLayout details_share_qqfriends = (LinearLayout) contentView.findViewById(R.id.details_share_qqfriends);
+        LinearLayout details_share_wocircle = (LinearLayout) contentView.findViewById(R.id.details_share_wocircle);
+        LinearLayout details_share_qqcircle = (LinearLayout) contentView.findViewById(R.id.details_share_qqcircle);
+        TextView details_share_cancel = (TextView) contentView.findViewById(R.id.details_share_cancel);
+
+        //显示PopupWindow
+        View rootview = LayoutInflater.from(this).inflate(R.layout.activity_personal2, null);
+        window1.showAtLocation(rootview, Gravity.CENTER, 0, 0);
+
+        details_share_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                window1.dismiss();
+
+            }
+        });
+
+
+
+
+        details_share_wxfriends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailsActivity.this, "微信好友", Toast.LENGTH_SHORT).show();
+
+                window1.dismiss();
+
+            }
+        });
+        details_share_wxcircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(DetailsActivity.this, "微信朋友圈", Toast.LENGTH_SHORT).show();
+
+                window1.dismiss();
+
+            }
+        });
+
+
+        details_share_qqfriends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(DetailsActivity.this, "QQ好友", Toast.LENGTH_SHORT).show();
+
+                window1.dismiss();
+
+            }
+        });
+
+
+
+
+
+        details_share_wocircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailsActivity.this, "新浪微博", Toast.LENGTH_SHORT).show();
+
+                window1.dismiss();
+
+            }
+        });
+
+
+
+
+
+        details_share_qqcircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailsActivity.this, "QQ空间", Toast.LENGTH_SHORT).show();
+                window1.dismiss();
+            }
+        });
+
+
+
+
+
+    }
+
+
+
+
 
 
     //点击收藏

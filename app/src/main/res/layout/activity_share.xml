@@ -87,7 +87,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/share_invite"
                     android:layout_width="432px"
                     android:layout_height="115px"
                     android:layout_below="@+id/textView19"
@@ -103,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/textView19"
-                    android:layout_below="@+id/textView20"
+                    android:layout_below="@+id/share_invite"
                     android:layout_marginTop="34px"
                     android:text="(长按可复制)"
                     android:textColor="#FFF"
@@ -143,14 +143,41 @@
 
 
 
-
-                    <ImageView
+                    <LinearLayout
+                        android:id="@+id/share_wxfriends1"
                         android:layout_weight="1"
-                        android:layout_width="140px"
-                        android:layout_height="140px"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
 
-                        android:src="@drawable/weixinhaoyou3" />
+                        <ImageView
+                            android:layout_weight="1"
+                            android:layout_width="140px"
+                            android:layout_height="140px"
+                            android:src="@drawable/weixinhaoyou3" />
 
+                        <TextView
+                            android:layout_marginTop="30px"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="微信好友"
+                            android:textSize="37px"/>
+
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/share_wxcircle1"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
 
                     <ImageView
 
@@ -160,60 +187,47 @@
                         android:src="@drawable/weixinpengyouquan3" />
 
 
+                        <TextView
+                            android:layout_marginTop="30px"
+
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="微信朋友圈"
+                            android:textSize="37px"/>
 
 
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/share_qqcircle1"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
                     <ImageView
                         android:layout_weight="1"
                         android:layout_width="140px"
                         android:layout_height="140px"
                         android:src="@drawable/qqhaoyou3" />
-
-
-
-
-                </LinearLayout>
-
-<LinearLayout
-    android:layout_marginTop="30px"
-    android:layout_marginLeft="62.5px"
-    android:layout_marginRight="62.5px"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-   >
-
-
-    <TextView
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="微信好友"
-        android:textSize="37px"/>
-
-
-    <TextView
-
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="微信朋友圈"
-        android:textSize="37px"/>
-
-    <TextView
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="QQ好友"
-        android:textSize="37px"/>
-
-
-
-
+                        <TextView
+                            android:layout_marginTop="30px"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="QQ好友"
+                            android:textSize="37px"/>
 
 
 </LinearLayout>
+
+                </LinearLayout>
 
 
 
@@ -227,58 +241,54 @@
 
 
 
+                    <LinearLayout
+                        android:id="@+id/share_xlsina1"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
                     <ImageView
                         android:layout_weight="1"
                         android:layout_width="140px"
                         android:layout_height="140px"
                         android:src="@drawable/weibo3" />
+                        <TextView
+                            android:layout_marginTop="30px"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="新浪微博"
+                            android:textSize="37px"/>
+
+</LinearLayout>
 
 
 
-
+                    <LinearLayout
+                        android:id="@+id/share_qqfriends"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
                     <ImageView
                         android:layout_weight="1"
                         android:layout_width="140px"
                         android:layout_height="140px"
                         android:src="@drawable/qqkongjian3" />
 
-
-
-
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_marginTop="30px"
-                    android:layout_marginLeft="218px"
-                    android:layout_marginRight="218px"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="新浪微博"
-                        android:textSize="37px"/>
-
-
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="QQ空间"
-                        android:textSize="37px"/>
-
-
-
-
+                        <TextView
+                            android:layout_marginTop="30px"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QQ空间"
+                            android:textSize="37px"/>
+</LinearLayout>
 
 
                 </LinearLayout>

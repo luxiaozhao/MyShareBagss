@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.base.BaseActivity;
 
@@ -64,7 +65,6 @@ public class MySetActivity extends BaseActivity {
             case R.id.myset_return:
                 finish();
                 break;
-
             case R.id.myset_safety:
                 Toast.makeText(MySetActivity.this, "帐号安全", Toast.LENGTH_SHORT).show();
                 break;
@@ -79,6 +79,21 @@ public class MySetActivity extends BaseActivity {
                 break;
             case R.id.myset_dropout:
                 Toast.makeText(MySetActivity.this, "确认退出", Toast.LENGTH_SHORT).show();
+                FileUtil.shanchu(MySetActivity.this);//清空
+
+//                Intent intent=new Intent();
+//                intent.setClass(LoginActivity.this, MainActivity.class);
+//                String name= (String) loginBean.getMsg().getName();
+//                intent.putExtra("name",name);
+//                String img= (String) loginBean.getMsg().getIconurl();
+//                intent.putExtra("img",img);
+//                setResult(0,intent);
+                finish();
+
+
+//                Glide.with(MySetActivity.this).load(R.mipmap.ic_launcher).into(mineAvatar);
+//                mine_name.setText("请登录");
+
                 break;
         }
     }

@@ -47,32 +47,6 @@ import butterknife.OnClick;
 *
 * */
 public class PersonalActivity extends BaseActivity {
-//    @BindView(R.id.personal_return)
-//    ImageView personalReturn;
-//    @BindView(R.id.personal_avatar)
-//    RelativeLayout personalAvatar;
-//    @BindView(R.id.personal_phone)
-//    RelativeLayout personalPhone;
-//    @BindView(R.id.personal_nickname)
-//    RelativeLayout personalNickname;
-//    @BindView(R.id.personal_signature)
-//    RelativeLayout personalSignature;
-//    @BindView(R.id.personal_avatar1)
-//    CircleImageView personal_avatar1;
-//    @BindView(R.id.personal_name1)
-//    TextView personalName1;
-//    @BindView(R.id.personal_number)
-//    TextView personalNumber;
-//
-//    @BindView(R.id.imgurl)
-//    TextView imgurl;
-
-
-//    @BindView(R.id.personal_number)
-//    TextView personal_number;
-
-    //    @BindView(R.id.personal_name1)
-//    TextView personal_name1;
     private int width;
     private int height;
     private PopupWindow window1;
@@ -110,7 +84,6 @@ public class PersonalActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        Toast.makeText(this, "222222222222", Toast.LENGTH_SHORT).show();
 //        Log.e("TAG","-----------");
 //        FileUtil.MinereadFromPre(this,personalName1,personal_avatar1);
 //        String s = personalName1.getText().toString();
@@ -131,7 +104,7 @@ public class PersonalActivity extends BaseActivity {
 
         personal_name1 = (TextView) findViewById(R.id.personal_name1);
         String s = personal_name1.getText().toString();
-        Toast.makeText(this, "3333333333333333", Toast.LENGTH_SHORT).show();
+
         imageView11 = (ImageView) findViewById(R.id.imageView11);
 
         personal_nickname = (RelativeLayout) findViewById(R.id.personal_nickname);
@@ -362,9 +335,6 @@ public class PersonalActivity extends BaseActivity {
                     imageUri = FileProvider.getUriForFile(PersonalActivity.this, "com.zz.fileprovider", fileUri);
                 }
                 PhotoUtils.takePicture(this, imageUri, CODE_CAMERA_REQUEST);
-
-//------------------------------------
-//                Log.e("TAG","========"+fileCropUri);
 
             } else {
                 ToastUtils.showShort(this, "设备没有SD卡！");
