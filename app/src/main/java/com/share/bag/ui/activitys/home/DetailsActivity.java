@@ -26,6 +26,7 @@ import com.share.bag.ui.fragments.page.CommentsFragment;
 import com.share.bag.ui.fragments.page.DetalisFragment;
 import com.share.bag.ui.pay.BuyActivity;
 import com.share.bag.ui.pay.RentActivity;
+import com.share.bag.ui.share.ShareActivity;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
 import com.youth.banner.Banner;
@@ -46,8 +47,6 @@ public class DetailsActivity extends BaseActivity {
 
     @BindView(R.id.Details_return)
     ImageView DetailsReturn;
-    @BindView(R.id.Details_shared)
-    ImageView DetailsShared;
     @BindView(R.id.tab)
     TabLayout tab;
 
@@ -65,9 +64,7 @@ public class DetailsActivity extends BaseActivity {
     TextView details__user;
 
     private String tmp;
-    //             Banner   List
     private List<String> heardimg = new ArrayList<>();
-    //             review  Number
     int NUM = 0;
 
     private List<Fragment> fragmentList = new ArrayList<>();
@@ -79,9 +76,9 @@ public class DetailsActivity extends BaseActivity {
     private CosTomPageAdapter mCosTomPageAdapter;
 
     private FragmentManager fragmentManager;
+    private ImageView Details_shared;
 
     @Override
-//    Details_return
     public int initLayout() {
         return R.layout.activity_details;
     }
@@ -94,7 +91,19 @@ public class DetailsActivity extends BaseActivity {
         tmp = intent.getStringExtra("details");
         Log.e("sss", "initView: " + tmp);
         fragmentManager = getSupportFragmentManager();
-
+        Details_shared = (ImageView) findViewById(R.id.Details_shared);
+        Details_shared.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (details__user.getText().equals("")) {
+                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent rentloginintent = new Intent(DetailsActivity.this, ShareActivity.class);
+                    startActivity(rentloginintent);
+                }
+            }
+        });
     }
 
     @Override
@@ -160,7 +169,6 @@ public class DetailsActivity extends BaseActivity {
                 Toast.makeText(DetailsActivity.this, "Request unsuccessful", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
@@ -173,61 +181,58 @@ public class DetailsActivity extends BaseActivity {
         finish();
     }
 
+
     @OnClick({R.id.details_button_collection, R.id.details_button_rent, R.id.details_button_buy})
     public void onViewClicked(View view) {
-        FileUtil.SelectedreadFromPre(DetailsActivity.this,details__user);
+        FileUtil.SelectedreadFromPre(DetailsActivity.this, details__user);
         switch (view.getId()) {
             case R.id.details_button_collection:
-//                Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
-                if (details__user.getText().equals("")){
+                if (details__user.getText().equals("")) {
                     Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
-                }else {
+
+                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else {
                     getselect();
                 }
                 break;
             case R.id.details_button_rent://租下
-                if (details__user.getText().equals("")){
-//                    Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(DetailsActivity.this,LoginActivity.class);
+                if (details__user.getText().equals("")) {
+                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
                     startActivity(intent);
-                }else {
+                } else {
                     Intent rentloginintent = new Intent(DetailsActivity.this, RentActivity.class);
                     startActivity(rentloginintent);
                 }
                 break;
-            case R.id.details_button_buy://买下
-
-                if (details__user.getText().equals("")){
-//                    Toast.makeText(DetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(DetailsActivity.this,LoginActivity.class);
+            case R.id.details_button_buy://确认买
+                if (details__user.getText().equals("")) {
+                    Intent intent = new Intent(DetailsActivity.this, LoginActivity.class);
                     startActivity(intent);
-
-
-                }else {
-
+                } else {
                     Intent rentloginintent = new Intent(DetailsActivity.this, BuyActivity.class);
                     startActivity(rentloginintent);
                 }
-
                 break;
         }
     }
 
+
     //点击收藏
     public void getselect() {
 
-        Map<String ,String> collection=new HashMap();
-        collection.put("baglist_id","1");
+        Map<String, String> collection = new HashMap();
+        collection.put("baglist_id", "1");
         OkHttpUtils.getInstance().post(SBUrls.COLLECTION, collection, new MyNetWorkCallback<CollectionBean>() {
             @Override
             public void onSuccess(CollectionBean collectionBean) {
                 String status = collectionBean.getInfo();
-                if (status.toString().equals("收藏成功")){
+                if (status.toString().equals("收藏成功")) {
 
-                    Toast.makeText(DetailsActivity.this, ""+status, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailsActivity.this, "" + status, Toast.LENGTH_SHORT).show();
 
-                }else {
-                    Toast.makeText(DetailsActivity.this, ""+status, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailsActivity.this, "" + status, Toast.LENGTH_SHORT).show();
                 }
 
 

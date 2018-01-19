@@ -18,8 +18,10 @@ import com.share.bag.FileUtil;
 import com.share.bag.R;
 import com.share.bag.base.BaseFragment;
 import com.share.bag.ui.activitys.mine.LoginActivity;
+import com.share.bag.ui.activitys.mine.MySetActivity;
 import com.share.bag.ui.activitys.mine.PersonalActivity;
 import com.share.bag.ui.activitys.mine.WalletActivity;
+import com.share.bag.ui.share.ShareActivity;
 import com.share.bag.utils.SharePreUtils;
 
 import butterknife.BindView;
@@ -209,8 +211,14 @@ public class MineFragment extends BaseFragment {
                 break;
             case R.id.mine_invite://邀请好友
 
-                Toast.makeText(getActivity(), "点击了邀请好友", Toast.LENGTH_SHORT).show();
-
+                if (mine_name.getText().equals("请登录")) {//登录
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                } else {//分享界面
+//
+                    Intent rentloginintent = new Intent(getActivity(), ShareActivity.class);
+                    startActivity(rentloginintent);
+                }
                 break;
             case R.id.mine_address://我的地址
                 Toast.makeText(getActivity(), "点击了我的地址", Toast.LENGTH_SHORT).show();
@@ -231,28 +239,21 @@ public class MineFragment extends BaseFragment {
 
                 break;
             case R.id.mine_cooperation://商务合作
-                Toast.makeText(getActivity(), "点击了商务合作", Toast.LENGTH_SHORT).show();
-
-
-//                SharePreUtils.clear();        shanchu
-                FileUtil.shanchu(getActivity());
+                Toast.makeText(getActivity(), "退出", Toast.LENGTH_SHORT).show();
+                FileUtil.shanchu(getActivity());//清空
                 Glide.with(getContext()).load(R.mipmap.ic_launcher).into(mineAvatar);
                  mine_name.setText("请登录");
 
                 break;
             case R.id.mine_set://设置
-//                Toast.makeText(getActivity(), "点击了设置", Toast.LENGTH_SHORT).show();
-
-//                if(SharePreUtils.getString(Constant.COOKIE , "").isEmpty()){
-////                    登录
-//                    myset = new Intent(getActivity(), LoginActivity.class);
-//                }else{
-//                                            这里蹦了，怎么回事。
-////                   个人中心
-//                    myset = new Intent(getActivity(), MySetActivity.class);
-//                }
-//                startActivity(myset);
-
+                if (mine_name.getText().equals("请登录")) {//登录
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                } else {//分享界面
+//
+                    Intent rentloginintent = new Intent(getActivity(), MySetActivity.class);
+                    startActivity(rentloginintent);
+                }
                 break;
         }
     }

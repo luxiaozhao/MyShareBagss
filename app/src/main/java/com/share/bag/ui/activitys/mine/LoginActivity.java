@@ -18,8 +18,6 @@ import com.share.bag.base.BaseActivity;
 import com.share.bag.entity.LoginBean;
 import com.share.bag.utils.okhttp.OkHttpUtils;
 import com.share.bag.utils.okhttp.callback.MyNetWorkCallback;
-import com.umeng.socialize.UMAuthListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -167,26 +165,26 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    private UMAuthListener shareList = new UMAuthListener() {
-        @Override
-        public void onStart(SHARE_MEDIA share_media) {
-//            Toast.makeText(LoginActivity.this, "开始", Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
-//            Toast.makeText(LoginActivity.this, "成功", Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
-//            Toast.makeText(LoginActivity.this, "error", Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA share_media, int i) {
-
-        }
-    };
+//    private UMAuthListener shareList = new UMAuthListener() {
+//        @Override
+//        public void onStart(SHARE_MEDIA share_media) {
+////            Toast.makeText(LoginActivity.this, "开始", Toast.LENGTH_LONG).show();
+//        }
+//
+//        @Override
+//        public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
+////            Toast.makeText(LoginActivity.this, "成功", Toast.LENGTH_LONG).show();
+//        }
+//
+//        @Override
+//        public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
+////            Toast.makeText(LoginActivity.this, "error", Toast.LENGTH_LONG).show();
+//        }
+//
+//        @Override
+//        public void onCancel(SHARE_MEDIA share_media, int i) {
+//
+//        }
+//    };
 
 }

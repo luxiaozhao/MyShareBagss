@@ -8,7 +8,10 @@ import com.share.bag.base.BaseFragment;
 /**
  * Created by Administrator on 2017/11/14.
  */
-
+/*/
+* 没用
+*
+* */
 public class UploadFragment extends BaseFragment {
 
     @Override
